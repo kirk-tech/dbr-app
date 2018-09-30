@@ -8,16 +8,14 @@
 
 import Foundation
 
+// Daily Bible Reading
 struct DBR: Codable {
-    let date: String
+    
     let verses: [String]
     let pastorsNotes: [String]
-    let audioLink: String
     
     private enum CodingKeys: String, CodingKey {
-        case date
         case verses
         case pastorsNotes = "pastors_notes"
-        case audioLink = "audio_link"
     }
 }

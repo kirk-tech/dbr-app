@@ -11,14 +11,10 @@ import RxSwift
 
 struct CompassService {
     
-    let http: HttpServiceProtocol
+    static let api = "https://1qium182f6.execute-api.us-west-1.amazonaws.com/default"
     
-    init() {
-        http = HttpService(api: "https://1qium182f6.execute-api.us-west-1.amazonaws.com/default")
-    }
-    
-    func todaysReading() -> Observable<DBR?> {
-        return self.http.get("/dbr-todays-reading")
+    static func todaysReading() -> Observable<DBR?> {
+        return HttpService.get("\(CompassService.api)/dbr-todays-reading")
             .map(into: DBR.self)
     }
     

@@ -17,11 +17,16 @@
 		FC11DF85215DD92C009E166B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF83215DD92C009E166B /* README.md */; };
 		FC11DF88215DD998009E166B /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF87215DD998009E166B /* HttpService.swift */; };
 		FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF89215DD9A1009E166B /* CompassService.swift */; };
+		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
+		FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */; };
+		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
+		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
 		FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3E215DE37C00C5FA7F /* Errors.swift */; };
 		FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */; };
 		FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */; };
 		FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */; };
+		FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,11 +56,16 @@
 		FC11DF83215DD92C009E166B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC11DF87215DD998009E166B /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		FC11DF89215DD9A1009E166B /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
+		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
+		FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCell.swift; sourceTree = "<group>"; };
+		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
+		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
 		FCEFDD3E215DE37C00C5FA7F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+dictionary.swift"; sourceTree = "<group>"; };
 		FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Map.swift"; sourceTree = "<group>"; };
 		FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Init.swift"; sourceTree = "<group>"; };
+		FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,11 +133,13 @@
 				FC11DF86215DD98A009E166B /* Services */,
 				FC11DF62215DD5E7009E166B /* AppDelegate.swift */,
 				FC11DF64215DD5E8009E166B /* ViewController.swift */,
-				FC11DF66215DD5E8009E166B /* Main.storyboard */,
 				FC11DF69215DD5E9009E166B /* Assets.xcassets */,
+				FC11DF66215DD5E8009E166B /* Main.storyboard */,
 				FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */,
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
 				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
+				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
+				FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */,
 			);
 			path = dbr;
 			sourceTree = "<group>";
@@ -146,6 +158,8 @@
 			children = (
 				FC11DF87215DD998009E166B /* HttpService.swift */,
 				FC11DF89215DD9A1009E166B /* CompassService.swift */,
+				FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */,
+				FCBC1A59216097880062CFD5 /* ESVService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -154,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				FCEFDD3C215DE20C00C5FA7F /* DBR.swift */,
+				FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -316,13 +331,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC11DF65215DD5E8009E166B /* ViewController.swift in Sources */,
+				FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */,
+				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
+				FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */,
+				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
+				FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */,
 				FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
