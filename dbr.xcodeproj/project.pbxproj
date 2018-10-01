@@ -17,6 +17,10 @@
 		FC11DF85215DD92C009E166B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF83215DD92C009E166B /* README.md */; };
 		FC11DF88215DD998009E166B /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF87215DD998009E166B /* HttpService.swift */; };
 		FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF89215DD9A1009E166B /* CompassService.swift */; };
+		FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F42161A71700046A63 /* TitleCell.xib */; };
+		FC25B1F72161AE1500046A63 /* VerseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F62161AE1500046A63 /* VerseCell.xib */; };
+		FC25B1F92161B07600046A63 /* VerseHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F82161B07600046A63 /* VerseHeader.xib */; };
+		FC25B1FB2161B09000046A63 /* VerseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B1FA2161B09000046A63 /* VerseHeader.swift */; };
 		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
 		FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
@@ -56,6 +60,10 @@
 		FC11DF83215DD92C009E166B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC11DF87215DD998009E166B /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		FC11DF89215DD9A1009E166B /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
+		FC25B1F42161A71700046A63 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
+		FC25B1F62161AE1500046A63 /* VerseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerseCell.xib; sourceTree = "<group>"; };
+		FC25B1F82161B07600046A63 /* VerseHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerseHeader.xib; sourceTree = "<group>"; };
+		FC25B1FA2161B09000046A63 /* VerseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseHeader.swift; sourceTree = "<group>"; };
 		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCell.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
@@ -139,7 +147,11 @@
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
 				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
 				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
+				FC25B1F42161A71700046A63 /* TitleCell.xib */,
 				FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */,
+				FC25B1F62161AE1500046A63 /* VerseCell.xib */,
+				FC25B1FA2161B09000046A63 /* VerseHeader.swift */,
+				FC25B1F82161B07600046A63 /* VerseHeader.xib */,
 			);
 			path = dbr;
 			sourceTree = "<group>";
@@ -267,7 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */,
+				FC25B1F92161B07600046A63 /* VerseHeader.xib in Resources */,
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
+				FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */,
+				FC25B1F72161AE1500046A63 /* VerseCell.xib in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */,
 			);
@@ -335,6 +350,7 @@
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
+				FC25B1FB2161B09000046A63 /* VerseHeader.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
