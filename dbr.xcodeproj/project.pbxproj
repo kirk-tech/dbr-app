@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D60C72877B2215C2C9573EB7 /* Pods_dbr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71D7B1212206BDD362792F9 /* Pods_dbr.framework */; };
 		FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF62215DD5E7009E166B /* AppDelegate.swift */; };
-		FC11DF65215DD5E8009E166B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* ViewController.swift */; };
+		FC11DF65215DD5E8009E166B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* SummaryViewController.swift */; };
 		FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF66215DD5E8009E166B /* Main.storyboard */; };
 		FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF69215DD5E9009E166B /* Assets.xcassets */; };
 		FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */; };
@@ -18,15 +18,11 @@
 		FC11DF88215DD998009E166B /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF87215DD998009E166B /* HttpService.swift */; };
 		FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF89215DD9A1009E166B /* CompassService.swift */; };
 		FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F42161A71700046A63 /* TitleCell.xib */; };
-		FC25B1F72161AE1500046A63 /* VerseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F62161AE1500046A63 /* VerseCell.xib */; };
-		FC25B1F92161B07600046A63 /* VerseHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F82161B07600046A63 /* VerseHeader.xib */; };
-		FC25B1FB2161B09000046A63 /* VerseHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B1FA2161B09000046A63 /* VerseHeader.swift */; };
 		FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */; };
 		FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */; };
 		FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */; };
 		FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */; };
 		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
-		FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -53,7 +49,7 @@
 		ED9AE00156156E57BD627D0B /* Pods-dbr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dbr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dbr/Pods-dbr.debug.xcconfig"; sourceTree = "<group>"; };
 		FC11DF5F215DD5E7009E166B /* dbr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC11DF62215DD5E7009E166B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC11DF64215DD5E8009E166B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FC11DF64215DD5E8009E166B /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		FC11DF67215DD5E8009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC11DF69215DD5E9009E166B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC11DF6C215DD5E9009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,15 +61,11 @@
 		FC11DF87215DD998009E166B /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		FC11DF89215DD9A1009E166B /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
 		FC25B1F42161A71700046A63 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
-		FC25B1F62161AE1500046A63 /* VerseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerseCell.xib; sourceTree = "<group>"; };
-		FC25B1F82161B07600046A63 /* VerseHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VerseHeader.xib; sourceTree = "<group>"; };
-		FC25B1FA2161B09000046A63 /* VerseHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseHeader.swift; sourceTree = "<group>"; };
 		FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
 		FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeadlandOne-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+optimalHeight.swift"; sourceTree = "<group>"; };
 		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
-		FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCell.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -150,17 +142,13 @@
 				FC11DF86215DD98A009E166B /* Services */,
 				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
 				FC11DF62215DD5E7009E166B /* AppDelegate.swift */,
-				FC11DF64215DD5E8009E166B /* ViewController.swift */,
+				FC11DF64215DD5E8009E166B /* SummaryViewController.swift */,
 				FC11DF69215DD5E9009E166B /* Assets.xcassets */,
 				FC11DF66215DD5E8009E166B /* Main.storyboard */,
 				FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */,
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
 				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
 				FC25B1F42161A71700046A63 /* TitleCell.xib */,
-				FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */,
-				FC25B1F62161AE1500046A63 /* VerseCell.xib */,
-				FC25B1FA2161B09000046A63 /* VerseHeader.swift */,
-				FC25B1F82161B07600046A63 /* VerseHeader.xib */,
 			);
 			path = dbr;
 			sourceTree = "<group>";
@@ -299,10 +287,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */,
-				FC25B1F92161B07600046A63 /* VerseHeader.xib in Resources */,
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
 				FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */,
-				FC25B1F72161AE1500046A63 /* VerseCell.xib in Resources */,
 				FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */,
@@ -367,17 +353,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC11DF65215DD5E8009E166B /* ViewController.swift in Sources */,
+				FC11DF65215DD5E8009E166B /* SummaryViewController.swift in Sources */,
 				FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
-				FC25B1FB2161B09000046A63 /* VerseHeader.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
-				FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
