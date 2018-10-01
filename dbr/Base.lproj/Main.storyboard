@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="780"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Cu-Hd-q6K" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1500"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="2000"/>
                                         <subviews>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uIY-Eg-Jd1">
                                                 <rect key="frame" x="0.0" y="20" width="375" height="62"/>
@@ -55,7 +55,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2RB-Bx-tHS">
-                                                <rect key="frame" x="0.0" y="165.5" width="375" height="1334.5"/>
+                                                <rect key="frame" x="0.0" y="166" width="375" height="1834"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </tableView>
                                         </subviews>
@@ -63,6 +63,7 @@
                                             <constraint firstItem="4oB-GV-sWB" firstAttribute="top" secondItem="uIY-Eg-Jd1" secondAttribute="bottom" constant="20" id="0Vv-oI-bOU"/>
                                             <constraint firstAttribute="bottom" secondItem="2RB-Bx-tHS" secondAttribute="bottom" id="2oj-F7-QtW"/>
                                             <constraint firstItem="2RB-Bx-tHS" firstAttribute="leading" secondItem="5Cu-Hd-q6K" secondAttribute="leading" id="4Gp-Px-773"/>
+                                            <constraint firstAttribute="height" constant="2000" id="7Tk-jI-yah"/>
                                             <constraint firstAttribute="trailing" secondItem="2RB-Bx-tHS" secondAttribute="trailing" id="Ail-UT-ceI"/>
                                             <constraint firstAttribute="trailing" secondItem="uIY-Eg-Jd1" secondAttribute="trailing" id="OaO-K1-SFy"/>
                                             <constraint firstAttribute="trailing" secondItem="4oB-GV-sWB" secondAttribute="trailing" id="Scf-40-yYT"/>
@@ -70,7 +71,6 @@
                                             <constraint firstItem="4oB-GV-sWB" firstAttribute="leading" secondItem="5Cu-Hd-q6K" secondAttribute="leading" id="YeP-KE-iuZ"/>
                                             <constraint firstItem="2RB-Bx-tHS" firstAttribute="top" secondItem="4oB-GV-sWB" secondAttribute="bottom" id="bZD-nl-Swc"/>
                                             <constraint firstItem="uIY-Eg-Jd1" firstAttribute="leading" secondItem="5Cu-Hd-q6K" secondAttribute="leading" id="hWp-Tq-GZ5"/>
-                                            <constraint firstAttribute="height" priority="250" constant="1500" id="w4L-uJ-hhx"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -94,6 +94,7 @@
                     </view>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
+                        <outlet property="contentViewHeight" destination="7Tk-jI-yah" id="XLC-Nw-LmQ"/>
                         <outlet property="notes" destination="peI-KH-pbv" id="Nr9-t7-5TJ"/>
                         <outlet property="titleTable" destination="uIY-Eg-Jd1" id="Gtp-dp-JJA"/>
                         <outlet property="titleTableHeight" destination="0cB-xZ-50B" id="kr0-7v-Ajx"/>

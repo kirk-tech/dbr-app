@@ -9,17 +9,17 @@
 import Foundation
 
 struct ESVPassageResponse: Codable {
-    let query: String
-    let canonical: String
-    let parsed: [String]
-    let passageMeta: [ESVPassageMeta]
+//    let query: String
+//    let canonical: String
+//    let parsed: [String]
+//    let passageMeta: [ESVPassageMeta]
     let passages: [String]
     private enum CodingKeys: String, CodingKey {
-        case query
-        case canonical
-        case parsed
-        case passageMeta = "passage_meta"
-        case passages = "passages"
+//        case query
+//        case canonical
+//        case parsed
+//        case passageMeta = "passage_meta"
+        case passages
     }
 }
 

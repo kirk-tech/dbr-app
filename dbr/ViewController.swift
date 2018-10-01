@@ -11,13 +11,16 @@ import RxSwift
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var titleTableHeight: NSLayoutConstraint!
     @IBOutlet weak var titleTable: UITableView!
     @IBOutlet weak var verseTable: UITableView!
     @IBOutlet weak var notes: UILabel!
     
     var dbr: DBR?
+    var passages = [String: String]()
     let disposeBag = DisposeBag()
+    var passageHeights = [String: CGFloat]()
     
     override func viewDidLoad() {
 
@@ -30,8 +33,6 @@ class ViewController: UIViewController {
         
         self.verseTable.sectionHeaderHeight = UITableViewAutomaticDimension;
         self.verseTable.estimatedSectionHeaderHeight = 60;
-        
-        // self.titleTable.rowHeight = UITableViewAutomaticDimension
         self.verseTable.rowHeight = UITableViewAutomaticDimension
         
         let titleCellNib = UINib.init(nibName: "TitleCell", bundle: nil)
@@ -45,11 +46,17 @@ class ViewController: UIViewController {
         
         CompassService.todaysReading().subscribe(
             onNext: { dbr in
-                self.dbr = dbr
+                guard let br = dbr else { return /* TODO: Handle failed request for todays readings */ }
+                self.dbr = br
                 self.updatePastorsNotes()
                 self.titleTable.reloadData()
-                self.verseTable.reloadData()
-        }).disposed(by: disposeBag)
+                ESVService.getPassages(br.verses).subscribe(onNext: { passages in
+                    guard let pass = passages else { return /* TODO: Handle failed request for passages */ }
+                    self.passages = pass
+                    self.verseTable.reloadData()
+                }).disposed(by: self.disposeBag)
+                
+        }).disposed(by: self.disposeBag)
         
         super.viewDidLoad()
     }
@@ -65,15 +72,11 @@ class ViewController: UIViewController {
         self.notes.setLineSpacing(3.0, multiple: 1.2)
     }
     
-}
-
-extension ViewController:  UITableViewDataSource, UITableViewDelegate {
-    
     func titleTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let d = dbr else { return UITableViewCell() }
         let title = d.verses[indexPath.section]
         let cell = titleTable.dequeueReusableCell(withIdentifier: "TitleCell") as! TitleCell
-    
+        
         cell.setTitle(title)
         
         return cell
@@ -82,12 +85,30 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate {
     func verseTableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let d = dbr else { return UITableViewCell() }
         let verse = d.verses[indexPath.section]
+        guard let passage = self.passages[verse] else { return UITableViewCell() }
         let cell = verseTable.dequeueReusableCell(withIdentifier: "VerseCell") as! VerseCell
         
-        cell.setVerse(verse)
+        cell.setPassage(passage)
+        
+        // Save the height for later use in row height
+        let passageHeight = cell.getOptimalLabelHeight()
+        self.passageHeights[verse] = passageHeight
         
         return cell
     }
+    
+    func verseTableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = self.verseTable.dequeueReusableHeaderFooterView(withIdentifier: "VerseHeader") as! VerseHeader
+        
+        let verse = dbr?.verses[section]
+        if let v = verse { header.setVerse(v) }
+        
+        return header
+    }
+    
+}
+
+extension ViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
@@ -112,13 +133,20 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate {
         return nil
     }
     
-    func verseTableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = self.verseTable.dequeueReusableHeaderFooterView(withIdentifier: "VerseHeader") as! VerseHeader
-        
-        let verse = dbr?.verses[section]
-        if let v = verse { header.setVerse(v) }
-        
-        return header
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        guard tableView == self.verseTable else { return 50 }
+        guard let d = dbr else { return 50 }
+        let verse = d.verses[indexPath.section]
+        return passageHeights[verse] ?? 50
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard tableView == verseTable else { return }
+        let isLastCell = indexPath.section == (self.dbr?.verses.count ?? 0) - 1
+        if isLastCell {
+            self.contentViewHeight.constant = self.passageHeights.values.reduce(0, +) + 1000
+        }
     }
     
 }

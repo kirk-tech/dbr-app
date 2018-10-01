@@ -24,6 +24,7 @@
 		FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */; };
 		FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */; };
 		FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */; };
+		FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */; };
 		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
 		FCBC1A5821608E8E0062CFD5 /* VerseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
@@ -70,6 +71,7 @@
 		FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
 		FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeadlandOne-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+optimalHeight.swift"; sourceTree = "<group>"; };
 		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerseCell.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
@@ -146,13 +148,13 @@
 				FCEFDD42215DE48200C5FA7F /* Extensions */,
 				FCEFDD3B215DE20300C5FA7F /* Model */,
 				FC11DF86215DD98A009E166B /* Services */,
+				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
 				FC11DF62215DD5E7009E166B /* AppDelegate.swift */,
 				FC11DF64215DD5E8009E166B /* ViewController.swift */,
 				FC11DF69215DD5E9009E166B /* Assets.xcassets */,
 				FC11DF66215DD5E8009E166B /* Main.storyboard */,
 				FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */,
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
-				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
 				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
 				FC25B1F42161A71700046A63 /* TitleCell.xib */,
 				FCBC1A5721608E8E0062CFD5 /* VerseCell.swift */,
@@ -208,6 +210,7 @@
 				FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */,
 				FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */,
 				FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */,
+				FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 			files = (
 				FC11DF65215DD5E8009E166B /* ViewController.swift in Sources */,
 				FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */,
+				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,

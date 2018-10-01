@@ -14,6 +14,7 @@ class VerseHeader: UITableViewHeaderFooterView {
     @IBOutlet weak var verse: UILabel!
     
     func setVerse(_ verse: String) -> Void {
+        print("Setting header: \(verse)")
         self.verse.text = verse
     }
     
