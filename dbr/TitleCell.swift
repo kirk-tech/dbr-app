@@ -15,7 +15,6 @@ class TitleCell: UITableViewCell {
     @IBOutlet weak var label: UILabel!
     
     func setTitle(_ title: String) -> Void {
-        print("Setting title: \(title)")
         self.label.text = title
     }
     

@@ -28,6 +28,9 @@ class ViewController: UIViewController {
         
         self.titleTable.sectionHeaderHeight = 0.0;
         
+        self.verseTable.sectionHeaderHeight = UITableViewAutomaticDimension;
+        self.verseTable.estimatedSectionHeaderHeight = 60;
+        
         // self.titleTable.rowHeight = UITableViewAutomaticDimension
         self.verseTable.rowHeight = UITableViewAutomaticDimension
         
@@ -58,14 +61,8 @@ class ViewController: UIViewController {
     
     func updatePastorsNotes() -> Void {
         guard let pastorsNotes = dbr?.pastorsNotes[0] else { return }
-        
-        let attributedString = NSMutableAttributedString(string: pastorsNotes)
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = 3
-        
-        attributedString.addAttribute(.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attributedString.length))
-        
-        self.notes.attributedText = attributedString
+        self.notes.text = pastorsNotes
+        self.notes.setLineSpacing(3.0, multiple: 1.2)
     }
     
 }
@@ -105,9 +102,7 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        let ret = self.dbr?.verses.count ?? 0
-        print("Number of sections: \(ret)")
-        return ret
+        return self.dbr?.verses.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -125,13 +120,5 @@ extension ViewController:  UITableViewDataSource, UITableViewDelegate {
         
         return header
     }
-    
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
-//
-//    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UITableViewAutomaticDimension
-//    }
     
 }
