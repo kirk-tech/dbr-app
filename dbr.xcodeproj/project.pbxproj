@@ -22,6 +22,8 @@
 		FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */; };
 		FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */; };
 		FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */; };
+		FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */; };
+		FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */; };
 		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
@@ -65,6 +67,8 @@
 		FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeadlandOne-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+optimalHeight.swift"; sourceTree = "<group>"; };
+		FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scripture.storyboard; sourceTree = "<group>"; };
+		FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
 		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
 				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
 				FC25B1F42161A71700046A63 /* TitleCell.xib */,
+				FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */,
+				FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */,
 			);
 			path = dbr;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
 				FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */,
 				FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */,
+				FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */,
 				FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */,
@@ -360,6 +367,7 @@
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
+				FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */,
 				FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,

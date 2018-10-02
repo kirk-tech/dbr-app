@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HeadlandOne-Regular.ttf">
+            <string>HeadlandOne-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Scripture View Controller-->
+        <scene sceneID="ndE-QQ-4OB">
+            <objects>
+                <viewController storyboardIdentifier="ScriptureViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lz8-QR-DfA" customClass="ScriptureViewController" customModule="dbr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVx-BY-jyO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yKK-Ml-165">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Owx-mx-Tco">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qPu-4a-iri" userLabel="Text">
+                                                <rect key="frame" x="20" y="167" width="335" height="459"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="If2-EU-FVT" userLabel="Address">
+                                                <rect key="frame" x="20" y="67" width="335" height="34"/>
+                                                <fontDescription key="fontDescription" name="HeadlandOne-Regular" family="HeadlandOne" pointSize="27"/>
+                                                <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" priority="250" constant="647" id="El8-BI-xSp"/>
+                                            <constraint firstItem="qPu-4a-iri" firstAttribute="leading" secondItem="Owx-mx-Tco" secondAttribute="leading" constant="20" id="G4V-hv-tBg"/>
+                                            <constraint firstAttribute="trailing" secondItem="If2-EU-FVT" secondAttribute="trailing" constant="20" id="Je0-cc-aMK"/>
+                                            <constraint firstItem="qPu-4a-iri" firstAttribute="top" secondItem="If2-EU-FVT" secondAttribute="bottom" constant="66" id="MI8-eT-2HU"/>
+                                            <constraint firstItem="If2-EU-FVT" firstAttribute="top" secondItem="Owx-mx-Tco" secondAttribute="top" constant="67" id="ckx-SI-IPX"/>
+                                            <constraint firstItem="If2-EU-FVT" firstAttribute="leading" secondItem="Owx-mx-Tco" secondAttribute="leading" constant="20" id="ng8-rp-3Q4"/>
+                                            <constraint firstAttribute="bottom" secondItem="qPu-4a-iri" secondAttribute="bottom" constant="20" id="uC4-iR-iP0"/>
+                                            <constraint firstAttribute="trailing" secondItem="qPu-4a-iri" secondAttribute="trailing" constant="20" id="xlu-wX-6Bq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="F83-cs-OI7" appends="YES" id="QAh-VD-Oit"/>
+                                            <outletCollection property="gestureRecognizers" destination="Slu-lG-fOv" appends="YES" id="dsN-u9-Q1c"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Owx-mx-Tco" firstAttribute="width" secondItem="yKK-Ml-165" secondAttribute="width" id="4hw-X4-a4R"/>
+                                    <constraint firstAttribute="trailing" secondItem="Owx-mx-Tco" secondAttribute="trailing" id="Bgg-pc-3gz"/>
+                                    <constraint firstAttribute="bottom" secondItem="Owx-mx-Tco" secondAttribute="bottom" id="bu6-mG-7zA"/>
+                                    <constraint firstItem="Owx-mx-Tco" firstAttribute="leading" secondItem="yKK-Ml-165" secondAttribute="leading" id="exy-NZ-jh3"/>
+                                    <constraint firstItem="Owx-mx-Tco" firstAttribute="top" secondItem="yKK-Ml-165" secondAttribute="top" id="hl8-fP-WYk"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yKK-Ml-165" firstAttribute="top" secondItem="qJR-KD-5BV" secondAttribute="top" id="07D-56-9Sh"/>
+                            <constraint firstItem="yKK-Ml-165" firstAttribute="leading" secondItem="qJR-KD-5BV" secondAttribute="leading" id="lBe-Gc-Oh2"/>
+                            <constraint firstItem="yKK-Ml-165" firstAttribute="bottom" secondItem="qJR-KD-5BV" secondAttribute="bottom" id="nmv-8d-Vjr"/>
+                            <constraint firstItem="yKK-Ml-165" firstAttribute="trailing" secondItem="qJR-KD-5BV" secondAttribute="trailing" id="qyB-GN-ZUm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qJR-KD-5BV"/>
+                    </view>
+                    <connections>
+                        <outlet property="passageLabel" destination="qPu-4a-iri" id="MgY-4U-6bt"/>
+                        <outlet property="titleAddress" destination="If2-EU-FVT" id="wnL-1x-5Fn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GI-AV-XhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="F83-cs-OI7" userLabel="Swipe LEFT Gesture Recognizer">
+                    <connections>
+                        <action selector="didSwipeLeft:" destination="lz8-QR-DfA" id="g2y-ug-2R1"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="Slu-lG-fOv" userLabel="Swipe RIGHT Gesture Recognizer">
+                    <connections>
+                        <action selector="didSwipeRight:" destination="lz8-QR-DfA" id="gmo-DI-dL5"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-204" y="17.541229385307346"/>
+        </scene>
+    </scenes>
+</document>

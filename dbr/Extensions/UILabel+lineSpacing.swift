@@ -21,8 +21,8 @@ extension UILabel {
         paragraphStyle.alignment = .justified
         
         let attributedString: NSMutableAttributedString
-        if let labelattributedText = self.attributedText {
-            attributedString = NSMutableAttributedString(attributedString: labelattributedText)
+        if let labelAttributedText = self.attributedText {
+            attributedString = NSMutableAttributedString(attributedString: labelAttributedText)
         } else {
             attributedString = NSMutableAttributedString(string: labelText)
         }

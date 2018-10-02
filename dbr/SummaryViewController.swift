@@ -57,6 +57,14 @@ class SummaryViewController: UIViewController {
         self.notes.setLineSpacing(2.0, multiple: 1.5)
     }
     
+    @IBAction func didSwipeRight(_ sender: Any) {
+        guard let br = dbr else { return }
+        let scriptureViewController = ScriptureViewController.storyboardInstance()!
+        scriptureViewController.passageAddresses = br.verses
+        scriptureViewController.index = 0
+        navigationController?.pushViewController(scriptureViewController, animated: true)
+    }
+    
 }
 
 extension SummaryViewController:  UITableViewDataSource, UITableViewDelegate {
