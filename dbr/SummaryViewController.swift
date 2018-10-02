@@ -11,15 +11,22 @@ import RxSwift
 
 class SummaryViewController: UIViewController {
     
+    @IBOutlet weak var menuDateLabel: UILabel!
+    // @IBOutlet weak var menuLabel: UILabel!
     @IBOutlet weak var titleTable: UITableView!
     @IBOutlet weak var notes: UILabel!
+    
     @IBOutlet weak var titleTableHeight: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollViewTrailingConstraint: NSLayoutConstraint!
     
     var dbr: DBR?
     var passages = [String: String]()
     let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
+        
+        menuDateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
 
         self.titleTable.delegate = self
         self.titleTable.dataSource = self
@@ -63,6 +70,13 @@ class SummaryViewController: UIViewController {
         scriptureViewController.passageAddresses = br.verses
         scriptureViewController.index = 0
         navigationController?.pushViewController(scriptureViewController, animated: true)
+    }
+    
+    
+    @IBAction func didSwipeLeft(_ sender: Any) {
+        print("SWIPEY LEFTY")
+        self.scrollViewLeadingConstraint.constant = 130
+        self.scrollViewTrailingConstraint.constant = -130
     }
     
 }
