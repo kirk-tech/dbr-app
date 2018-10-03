@@ -27,6 +27,8 @@
 		FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */; };
 		FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */; };
 		FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */; };
+		FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1CF2164D03C009FE58A /* CacheService.swift */; };
+		FC7EF1D22164E169009FE58A /* Observable+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D12164E169009FE58A /* Observable+cache.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -34,7 +36,6 @@
 		FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */; };
 		FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */; };
 		FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */; };
-		FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */; };
 		FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,8 @@
 		FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyBibleReading.storyboard; sourceTree = "<group>"; };
 		FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuBar.storyboard; sourceTree = "<group>"; };
 		FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
+		FC7EF1CF2164D03C009FE58A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
+		FC7EF1D12164E169009FE58A /* Observable+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+cache.swift"; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -82,7 +85,6 @@
 		FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+dictionary.swift"; sourceTree = "<group>"; };
 		FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Map.swift"; sourceTree = "<group>"; };
 		FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Init.swift"; sourceTree = "<group>"; };
-		FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
 		FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+initWithStoryboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -174,8 +176,8 @@
 			children = (
 				FC11DF87215DD998009E166B /* HttpService.swift */,
 				FC11DF89215DD9A1009E166B /* CompassService.swift */,
-				FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */,
 				FCBC1A59216097880062CFD5 /* ESVService.swift */,
+				FC7EF1CF2164D03C009FE58A /* CacheService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 				FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */,
 				FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */,
 				FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */,
+				FC7EF1D12164E169009FE58A /* Observable+cache.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
+				FC7EF1D22164E169009FE58A /* Observable+cache.swift in Sources */,
 				FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
@@ -424,9 +428,9 @@
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
+				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
 				FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */,
-				FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */,
 				FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
