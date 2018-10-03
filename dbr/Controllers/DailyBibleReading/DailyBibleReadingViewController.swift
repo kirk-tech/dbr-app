@@ -23,7 +23,7 @@ class DailyBibleReadingViewController: UIViewController {
 
         self.titleTable.delegate = self
         self.titleTable.dataSource = self
-        self.titleTable.rowHeight = 80
+//        self.titleTable.rowHeight = 80
         
         AppDelegate.global.store?.date.change.subscribe(onNext: self.loadNewDbr).disposed(by: disposeBag)
 
@@ -32,11 +32,6 @@ class DailyBibleReadingViewController: UIViewController {
             .disposed(by: self.disposeBag)
         
         super.viewDidLoad()
-    }
-    
-    override func viewWillLayoutSubviews() {
-//         super.updateViewConstraints()
-//         self.titleTableHeightConstraint?.constant = self.titleTable.contentSize.height
     }
     
     func updatePastorsNotes() -> Void {
@@ -55,6 +50,11 @@ class DailyBibleReadingViewController: UIViewController {
         AppDelegate.global.store?.dbr.value = dbr
         self.updatePastorsNotes()
         self.titleTable.reloadData()
+        print("reloading title table")
+//        let titleTableHeight = self.titleTable.contentSize.height
+//        if titleTableHeight > 0 {
+//            self.titleTableHeightConstraint?.constant = titleTableHeight
+//        }
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
