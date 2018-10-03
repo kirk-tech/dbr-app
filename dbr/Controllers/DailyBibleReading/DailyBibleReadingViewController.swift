@@ -23,7 +23,6 @@ class DailyBibleReadingViewController: UIViewController {
 
         self.titleTable.delegate = self
         self.titleTable.dataSource = self
-//        self.titleTable.rowHeight = 80
         
         AppDelegate.global.store?.date.change.subscribe(onNext: self.loadNewDbr).disposed(by: disposeBag)
 
