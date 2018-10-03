@@ -14,6 +14,12 @@ struct CacheService {
     let destination: URL
     private let queue = OperationQueue()
     
+    static var shared: CacheService {
+        get {
+            return AppDelegate.global.cache!
+        }
+    }
+    
     struct CacheModel<T: Codable>: Codable {
         let ttd: Double
         let payload: T

@@ -17,9 +17,6 @@ class MenuBarViewController: UIViewController {
     @IBOutlet weak var upArrow: UIImageView!
     @IBOutlet weak var downArrow: UIImageView!
     
-    var date = Date()
-    var dateChanged = PublishSubject<Date>()
-    
     override func viewDidLoad() {
         self.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
@@ -34,20 +31,16 @@ class MenuBarViewController: UIViewController {
     }
     
     func updateDateLabel() {
-        self.dateLabel.text = date.longMonthFormat()
+        self.dateLabel.text = AppDelegate.global.store!.date.value.longMonthFormat()
     }
     
     @objc func moveDateUp() {
-        print("move up")
-        self.date.addTimeInterval(86400)
-        self.dateChanged.onNext(self.date)
+        AppDelegate.global.store!.date.value = AppDelegate.global.store!.date.value.addingTimeInterval(86400)
         self.updateDateLabel()
     }
     
     @objc func moveDateDown() {
-        print("move down")
-        self.date.addTimeInterval(-86400)
-        self.dateChanged.onNext(self.date)
+        AppDelegate.global.store!.date.value = AppDelegate.global.store!.date.value.addingTimeInterval(-86400)
         self.updateDateLabel()
     }
     

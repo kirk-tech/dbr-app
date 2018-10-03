@@ -16,32 +16,39 @@ class ScriptureViewController: UIViewController {
     @IBOutlet weak var passageLabel: UILabel!
     
     let disposeBag = DisposeBag()
-    var passageAddresses = [String]()
-    var index: Int?
     
     var address: String? {
         get {
-            return index == nil ? nil : passageAddresses[index!]
+            let index = Store.shared.scriptureIndex.value
+            let verses = Store.shared.dbr.value?.verses
+            return verses?[index]
         }
     }
     
     override func viewDidLoad() {
+        Store.shared.scriptureIndex.value += 1
         self.titleAddress.text = address
         ESVService.getPassage(address!).subscribe(onNext: { passage in
             self.passageLabel.text = passage
+            // TODO: Get this to work ---v
             // self.passageLabel.setLineSpacing(2.0, multiple: 1.5)
         }).disposed(by: disposeBag)
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {
+        print("deca...")
+        AppDelegate.global.store?.scriptureIndex.value -= 1
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
-        guard (self.index! + 1) < self.passageAddresses.count else { return }
+        let canMoveToAnotherScripture: Bool = {
+            let index = Store.shared.scriptureIndex.value
+            let verseCount = Store.shared.dbr.value!.verses.count
+            return (index + 1) < verseCount
+        }()
+        guard canMoveToAnotherScripture else { return }
         let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
-        scriptureViewController.passageAddresses = passageAddresses
-        scriptureViewController.index = self.index! + 1
         navigationController?.pushViewController(scriptureViewController, animated: true)
     }
     

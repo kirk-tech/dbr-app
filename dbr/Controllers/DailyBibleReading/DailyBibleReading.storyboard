@@ -111,6 +111,7 @@
                         <outlet property="scrollViewLeadingConstraint" destination="xS8-lz-eOz" id="2q2-di-3SB"/>
                         <outlet property="scrollViewTrailingConstraint" destination="zZu-pS-gnB" id="O82-9v-fDB"/>
                         <outlet property="titleTable" destination="R66-O0-eOd" id="8iM-TF-LFl"/>
+                        <outlet property="titleTableHeightConstraint" destination="b5j-kS-Xmx" id="rw8-hc-o78"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zuh-aY-ia0" userLabel="First Responder" sceneMemberID="firstResponder"/>

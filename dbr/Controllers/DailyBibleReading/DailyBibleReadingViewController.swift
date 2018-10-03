@@ -11,69 +11,59 @@ import RxSwift
 
 class DailyBibleReadingViewController: UIViewController {
     
+    @IBOutlet weak var titleTableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var pastorsNotes: UILabel!
     @IBOutlet weak var titleTable: UITableView!
     
-    var dbr: DBR?
-    var passages = [String: String]()
     let disposeBag = DisposeBag()
-    
-    let onSwipeRight = PublishSubject<Int>()
     
     override func viewDidLoad() {
 
         self.titleTable.delegate = self
         self.titleTable.dataSource = self
         self.titleTable.rowHeight = 80
+        
+        AppDelegate.global.store?.date.change.subscribe(onNext: self.loadNewDbr).disposed(by: disposeBag)
 
-        CompassService.todaysReading().subscribe(
-            onNext: { dbr in
-                guard let br = dbr else { return /* TODO: Handle failed request for todays readings */ }
-                self.dbr = br
-                self.updatePastorsNotes()
-                self.titleTable.reloadData()
-        }).disposed(by: self.disposeBag)
+        CompassService.todaysReading()
+            .subscribe(onNext: self.updateViewWithNewDBR)
+            .disposed(by: self.disposeBag)
         
         super.viewDidLoad()
     }
     
     override func viewWillLayoutSubviews() {
-        // super.updateViewConstraints()
-        // print("updating constraints to: \(self.titleTable.contentSize.height)")
-        // self.titleTableHeightConstraint?.constant = self.titleTable.contentSize.height
+//         super.updateViewConstraints()
+//         self.titleTableHeightConstraint?.constant = self.titleTable.contentSize.height
     }
     
     func updatePastorsNotes() -> Void {
-        guard let notes = dbr?.pastorsNotes[0] else { return }
+        guard let notes = AppDelegate.global.store?.dbr.value?.pastorsNotes[0] else { return }
         self.pastorsNotes.text = notes
         self.pastorsNotes.setLineSpacing(2.0, multiple: 1.5)
     }
     
-    func loadNewDbr(onDate date: Date) -> Void {
-        print("Loading new DBR")
-        CompassService.reading(forDate: date).subscribe(
-            onNext: { dbr in
-                print("RESPONSE")
-                print(dbr)
-                guard let br = dbr else { return /* TODO: Handle failed request for todays readings */ }
-                self.dbr = br
-                self.updatePastorsNotes()
-                self.titleTable.reloadData()
-        }).disposed(by: self.disposeBag)
+    func loadNewDbr(_ date: Date) -> Void {
+        CompassService.reading(forDate: date)
+            .subscribe(onNext: self.updateViewWithNewDBR)
+            .disposed(by: self.disposeBag)
+    }
+    
+    func updateViewWithNewDBR(_ dbr: DBR?) {
+        AppDelegate.global.store?.dbr.value = dbr
+        self.updatePastorsNotes()
+        self.titleTable.reloadData()
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
-        guard let br = dbr else { return }
         let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
-        scriptureViewController.passageAddresses = br.verses
-        scriptureViewController.index = 0
         navigationController?.pushViewController(scriptureViewController, animated: true)
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {
-        self.onSwipeRight.onNext(0)
+        Store.shared.shouldShowMenu.value = true
     }
     
 }
@@ -81,11 +71,11 @@ class DailyBibleReadingViewController: UIViewController {
 extension DailyBibleReadingViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.dbr?.verses.count ?? 0
+        return AppDelegate.global.store?.dbr.value?.verses.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let d = dbr else { return UITableViewCell() }
+        guard let d = AppDelegate.global.store?.dbr.value else { return UITableViewCell() }
         let cell = titleTable.dequeueReusableCell(withIdentifier: "TitleCell") as! TitleCell
         cell.titleLabel.text = d.verses[indexPath.row]
         return cell

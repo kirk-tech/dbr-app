@@ -19,8 +19,8 @@ struct CompassService {
     
     static func reading(forDate date: Date) -> Observable<DBR?> {
         let dateId = date.dbrFormat()
-        let dbrId = "dbr_\(dateId)".replacingOccurrences(of: " ", with: "_")
-        if let data: DBR = AppDelegate.global.cache?.retrieve(dbrId) {
+        let dbrCacheId = "dbr_\(dateId)".replacingOccurrences(of: " ", with: "_")
+        if let data: DBR = AppDelegate.global.cache?.retrieve(dbrCacheId) {
             return Observable.just(data)
         }
         let parameters = [
@@ -28,7 +28,7 @@ struct CompassService {
         ]
         return HttpService.get("\(CompassService.api)/dbr-reading", parameters: parameters)
             .map(into: DBR.self)
-            .cache(usingKey: dbrId)
+            .cache(usingKey: dbrCacheId)
     }
     
 }

@@ -50,15 +50,13 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.dbrViewLeadingAnchor?.isActive = true
         self.dbrViewTrailingAnchor?.isActive = true
         
-        dbrController.onSwipeRight
-            .subscribe(onNext: { _ in self.showMenu()})
-            .disposed(by: disposeBag)
-        
-        menuBarController.dateChanged
-            .subscribe(onNext: { date in
-                print("going to \(date)")
-                dbrController.loadNewDbr(onDate: date)
-            }).disposed(by: disposeBag)
+        Store.shared.shouldShowMenu.change.subscribe(onNext: { shouldShowMenu in
+            if shouldShowMenu {
+                self.showMenu()
+            } else {
+                self.hideMenu()
+            }
+        }).disposed(by: disposeBag)
         
     }
     
