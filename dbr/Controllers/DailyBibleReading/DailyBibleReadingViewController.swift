@@ -51,6 +51,19 @@ class DailyBibleReadingViewController: UIViewController {
         self.pastorsNotes.setLineSpacing(2.0, multiple: 1.5)
     }
     
+    func loadNewDbr(onDate date: Date) -> Void {
+        print("Loading new DBR")
+        CompassService.reading(forDate: date).subscribe(
+            onNext: { dbr in
+                print("RESPONSE")
+                print(dbr)
+                guard let br = dbr else { return /* TODO: Handle failed request for todays readings */ }
+                self.dbr = br
+                self.updatePastorsNotes()
+                self.titleTable.reloadData()
+        }).disposed(by: self.disposeBag)
+    }
+    
     @IBAction func didSwipeLeft(_ sender: Any) {
         guard let br = dbr else { return }
         let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
@@ -68,17 +81,13 @@ class DailyBibleReadingViewController: UIViewController {
 extension DailyBibleReadingViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let ret = self.dbr?.verses.count ?? 0
-        print("rows: \(ret)")
-        return ret
+        return self.dbr?.verses.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let d = dbr else { return UITableViewCell() }
         let cell = titleTable.dequeueReusableCell(withIdentifier: "TitleCell") as! TitleCell
         cell.titleLabel.text = d.verses[indexPath.row]
-        print("make na cella")
         return cell
     }
     

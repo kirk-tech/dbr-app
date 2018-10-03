@@ -17,6 +17,10 @@ struct CacheService {
     struct CacheModel<T: Codable>: Codable {
         let ttd: Double
         let payload: T
+        func isStale() -> Bool {
+            let rightNow = Date().timeIntervalSince1970
+            return self.ttd < rightNow
+        }
     }
     
     init() {
@@ -52,15 +56,17 @@ struct CacheService {
     }
     
     func retrieve<T: Codable>(_ key: String) -> T? {
-        print("Checking cache...")
+        print("retrieving key: \(key)")
         guard
             let data = try? Data(contentsOf: destination.appendingPathComponent(key, isDirectory: false)),
             let model = try? JSONDecoder().decode(CacheModel<T>.self, from: data)
             else { return nil }
 
-        let rightNow = Date().timeIntervalSince1970
-        guard model.ttd > rightNow else { return nil }
-        
+        guard model.isStale() else {
+            // TODO: Remove from cache
+            return nil
+        }
+        print("got cached data")
         return model.payload
     }
     

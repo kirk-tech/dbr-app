@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 
 class MenuBarViewController: UIViewController {
@@ -16,14 +17,13 @@ class MenuBarViewController: UIViewController {
     @IBOutlet weak var upArrow: UIImageView!
     @IBOutlet weak var downArrow: UIImageView!
     
-    private let upTag = 2902
-    private let downTag = 2903
+    var date = Date()
+    var dateChanged = PublishSubject<Date>()
     
     override func viewDidLoad() {
         self.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
-        upArrow.tag = upTag
-        downArrow.tag = downTag
+        self.updateDateLabel()
         
         let downTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moveDateDown))
         downArrow.addGestureRecognizer(downTapGestureRecognizer)
@@ -33,12 +33,22 @@ class MenuBarViewController: UIViewController {
         
     }
     
+    func updateDateLabel() {
+        self.dateLabel.text = date.longMonthFormat()
+    }
+    
     @objc func moveDateUp() {
         print("move up")
+        self.date.addTimeInterval(86400)
+        self.dateChanged.onNext(self.date)
+        self.updateDateLabel()
     }
     
     @objc func moveDateDown() {
         print("move down")
+        self.date.addTimeInterval(-86400)
+        self.dateChanged.onNext(self.date)
+        self.updateDateLabel()
     }
     
 }

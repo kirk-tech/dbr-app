@@ -34,9 +34,14 @@ struct HttpService {
     }
     
     private static func sendGet(_ endpoint: String, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> Observable<Result<Any>> {
-
+        let debug = endpoint.contains("default")
         return Observable.create { (observer) -> Disposable in
-            
+            if debug {
+                print("## ENDAPONT")
+                print(endpoint)
+                print(parameters)
+                print("")
+            }
             let req = Alamofire.request(endpoint, method: .get, parameters: parameters, headers: headers).responseJSON { response in
                 
                 guard response.result.isSuccess else {
@@ -46,6 +51,9 @@ struct HttpService {
                 guard let _ = response.result.value else {
                     debugPrint(response)
                     return observer.onError(DBRError(data: response.data, message: "Response is empty"))
+                }
+                if debug {
+                    print(response)
                 }
                 observer.onNext(response.result)
                 observer.onCompleted()

@@ -41,8 +41,8 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-zZ-Oog">
-                                        <rect key="frame" x="16" y="308.5" width="343" height="30.5"/>
-                                        <fontDescription key="fontDescription" name="HeadlandOne-Regular" family="HeadlandOne" pointSize="24"/>
+                                        <rect key="frame" x="139.5" y="8" width="96.5" height="631"/>
+                                        <fontDescription key="fontDescription" name="HeadlandOne-Regular" family="HeadlandOne" pointSize="34"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -51,11 +51,11 @@
                                 <constraints>
                                     <constraint firstItem="Tau-Fc-Fai" firstAttribute="centerX" secondItem="e2q-SQ-kMu" secondAttribute="centerX" id="3oi-JD-QmY"/>
                                     <constraint firstItem="tRr-M9-KWH" firstAttribute="top" secondItem="e2q-SQ-kMu" secondAttribute="top" constant="19" id="G63-AW-1OY"/>
+                                    <constraint firstAttribute="bottom" secondItem="rAl-zZ-Oog" secondAttribute="bottom" constant="8" id="KPh-pZ-LiG"/>
                                     <constraint firstItem="tRr-M9-KWH" firstAttribute="centerX" secondItem="e2q-SQ-kMu" secondAttribute="centerX" id="MPw-ux-ooM"/>
-                                    <constraint firstItem="rAl-zZ-Oog" firstAttribute="centerY" secondItem="e2q-SQ-kMu" secondAttribute="centerY" id="X1H-jo-rYs"/>
-                                    <constraint firstItem="rAl-zZ-Oog" firstAttribute="leading" secondItem="e2q-SQ-kMu" secondAttribute="leading" constant="16" id="khK-wF-xm0"/>
+                                    <constraint firstItem="rAl-zZ-Oog" firstAttribute="top" secondItem="e2q-SQ-kMu" secondAttribute="top" constant="8" id="UtS-RB-T2u"/>
+                                    <constraint firstItem="rAl-zZ-Oog" firstAttribute="centerX" secondItem="e2q-SQ-kMu" secondAttribute="centerX" id="lkG-NB-NRC"/>
                                     <constraint firstAttribute="bottom" secondItem="Tau-Fc-Fai" secondAttribute="bottom" constant="22" id="nal-OQ-HbO"/>
-                                    <constraint firstAttribute="trailing" secondItem="rAl-zZ-Oog" secondAttribute="trailing" constant="16" id="ox8-56-cNf"/>
                                 </constraints>
                             </view>
                         </subviews>

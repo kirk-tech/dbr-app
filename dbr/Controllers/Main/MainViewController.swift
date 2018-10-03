@@ -54,6 +54,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             .subscribe(onNext: { _ in self.showMenu()})
             .disposed(by: disposeBag)
         
+        menuBarController.dateChanged
+            .subscribe(onNext: { date in
+                print("going to \(date)")
+                dbrController.loadNewDbr(onDate: date)
+            }).disposed(by: disposeBag)
+        
     }
     
     func showMenu() {

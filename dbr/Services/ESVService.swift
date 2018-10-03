@@ -13,14 +13,8 @@ struct ESVService {
     
     static let token = "c8e9443e501ba6ca417f14d0407f2d7459a22a0f"
     
-    static var cacher: CacheService {
-        get {
-            return (UIApplication.shared.delegate as! AppDelegate).cache!
-        }
-    }
-    
     static func getPassage(_ passage: String) -> Observable<String?> {
-        if let data: ESVPassageResponse = ESVService.cacher.retrieve(passage) {
+        if let data: ESVPassageResponse = AppDelegate.global.cache?.retrieve(passage) {
             return Observable.just(data.passages[0])
         }
         let params = [
@@ -34,25 +28,6 @@ struct ESVService {
             .cache(usingKey: passage)
             .map { response in response?.passages[0] }
     }
-    
-//    static func getPassages(_ addresses: [String]) -> Observable<[String: String]?> {
-//        let params = [
-//            "q": addresses.joined(separator: ";"),
-//            "include-passage-references": "false",
-//            "include-footnotes": "false"
-//        ]
-//        let headers = ["Authorization": "Token \(ESVService.token)"]
-//        return HttpService.get("https://api.esv.org/v3/passage/text/", parameters: params, headers: headers)
-//            .map(into: ESVPassageResponse.self)
-//            .map { response in
-//                guard let ps = response?.passages else { return nil }
-//                var res = [String: String]()
-//                for (index, passage) in ps.enumerated() {
-//                    res[addresses[index]] = passage
-//                }
-//                return res
-//            }
-//    }
     
     // TODO: func getAudio...
     
