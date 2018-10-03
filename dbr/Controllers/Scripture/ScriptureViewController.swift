@@ -25,11 +25,6 @@ class ScriptureViewController: UIViewController {
         }
     }
     
-    static func storyboardInstance() -> ScriptureViewController? {
-        let storyboard = UIStoryboard(name: "Scripture", bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "ScriptureViewController") as? ScriptureViewController
-    }
-    
     override func viewDidLoad() {
         self.titleAddress.text = address
         ESVService.getPassage(address!).subscribe(onNext: { passage in
@@ -44,7 +39,7 @@ class ScriptureViewController: UIViewController {
     
     @IBAction func didSwipeLeft(_ sender: Any) {
         guard (self.index! + 1) < self.passageAddresses.count else { return }
-        let scriptureViewController = ScriptureViewController.storyboardInstance()!
+        let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
         scriptureViewController.passageAddresses = passageAddresses
         scriptureViewController.index = self.index! + 1
         navigationController?.pushViewController(scriptureViewController, animated: true)

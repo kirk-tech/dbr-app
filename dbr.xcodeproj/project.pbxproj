@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		D60C72877B2215C2C9573EB7 /* Pods_dbr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71D7B1212206BDD362792F9 /* Pods_dbr.framework */; };
 		FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF62215DD5E7009E166B /* AppDelegate.swift */; };
-		FC11DF65215DD5E8009E166B /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* SummaryViewController.swift */; };
+		FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */; };
 		FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF66215DD5E8009E166B /* Main.storyboard */; };
 		FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF69215DD5E9009E166B /* Assets.xcassets */; };
 		FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */; };
@@ -17,14 +17,16 @@
 		FC11DF85215DD92C009E166B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF83215DD92C009E166B /* README.md */; };
 		FC11DF88215DD998009E166B /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF87215DD998009E166B /* HttpService.swift */; };
 		FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF89215DD9A1009E166B /* CompassService.swift */; };
-		FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1F42161A71700046A63 /* TitleCell.xib */; };
 		FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */; };
 		FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */; };
 		FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */; };
 		FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */; };
 		FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */; };
+		FC5EF81A21640A7F00F00ABA /* MenuBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF81921640A7F00F00ABA /* MenuBarViewController.swift */; };
+		FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF81B21640F7200F00ABA /* MainViewController.swift */; };
+		FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */; };
+		FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */; };
 		FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */; };
-		FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5521608D310062CFD5 /* TitleCell.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -33,6 +35,7 @@
 		FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */; };
 		FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */; };
 		FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */; };
+		FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +54,7 @@
 		ED9AE00156156E57BD627D0B /* Pods-dbr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dbr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dbr/Pods-dbr.debug.xcconfig"; sourceTree = "<group>"; };
 		FC11DF5F215DD5E7009E166B /* dbr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC11DF62215DD5E7009E166B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FC11DF64215DD5E8009E166B /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBibleReadingViewController.swift; sourceTree = "<group>"; };
 		FC11DF67215DD5E8009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC11DF69215DD5E9009E166B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC11DF6C215DD5E9009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,14 +65,16 @@
 		FC11DF83215DD92C009E166B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC11DF87215DD998009E166B /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
 		FC11DF89215DD9A1009E166B /* CompassService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompassService.swift; sourceTree = "<group>"; };
-		FC25B1F42161A71700046A63 /* TitleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TitleCell.xib; sourceTree = "<group>"; };
 		FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+lineSpacing.swift"; sourceTree = "<group>"; };
 		FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "HeadlandOne-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+optimalHeight.swift"; sourceTree = "<group>"; };
 		FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Scripture.storyboard; sourceTree = "<group>"; };
+		FC5EF81921640A7F00F00ABA /* MenuBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarViewController.swift; sourceTree = "<group>"; };
+		FC5EF81B21640F7200F00ABA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyBibleReading.storyboard; sourceTree = "<group>"; };
+		FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuBar.storyboard; sourceTree = "<group>"; };
 		FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
-		FCBC1A5521608D310062CFD5 /* TitleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleCell.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -78,6 +83,7 @@
 		FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+Map.swift"; sourceTree = "<group>"; };
 		FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+Init.swift"; sourceTree = "<group>"; };
 		FCEFDD52215EA16C00C5FA7F /* LocalStorageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorageService.swift; sourceTree = "<group>"; };
+		FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+initWithStoryboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,21 +146,16 @@
 		FC11DF61215DD5E7009E166B /* dbr */ = {
 			isa = PBXGroup;
 			children = (
+				FCF32AFE2164703A004BDCBD /* Controllers */,
 				FC25B1FE2161F10100046A63 /* Fonts */,
 				FCEFDD42215DE48200C5FA7F /* Extensions */,
 				FCEFDD3B215DE20300C5FA7F /* Model */,
 				FC11DF86215DD98A009E166B /* Services */,
 				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
 				FC11DF62215DD5E7009E166B /* AppDelegate.swift */,
-				FC11DF64215DD5E8009E166B /* SummaryViewController.swift */,
 				FC11DF69215DD5E9009E166B /* Assets.xcassets */,
-				FC11DF66215DD5E8009E166B /* Main.storyboard */,
 				FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */,
 				FC11DF6E215DD5E9009E166B /* Info.plist */,
-				FCBC1A5521608D310062CFD5 /* TitleCell.swift */,
-				FC25B1F42161A71700046A63 /* TitleCell.xib */,
-				FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */,
-				FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */,
 			);
 			path = dbr;
 			sourceTree = "<group>";
@@ -205,8 +206,56 @@
 				FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */,
 				FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */,
 				FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */,
+				FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FCF32AFB21647010004BDCBD /* DailyBibleReading */ = {
+			isa = PBXGroup;
+			children = (
+				FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */,
+				FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */,
+			);
+			path = DailyBibleReading;
+			sourceTree = "<group>";
+		};
+		FCF32AFC21647028004BDCBD /* Scripture */ = {
+			isa = PBXGroup;
+			children = (
+				FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */,
+				FC32EF5E2162CFB000D4DC6E /* Scripture.storyboard */,
+			);
+			path = Scripture;
+			sourceTree = "<group>";
+		};
+		FCF32AFD21647033004BDCBD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				FC5EF81B21640F7200F00ABA /* MainViewController.swift */,
+				FC11DF66215DD5E8009E166B /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FCF32AFE2164703A004BDCBD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FCF32AFD21647033004BDCBD /* Main */,
+				FCF32AFF2164708A004BDCBD /* MenuBar */,
+				FCF32AFC21647028004BDCBD /* Scripture */,
+				FCF32AFB21647010004BDCBD /* DailyBibleReading */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		FCF32AFF2164708A004BDCBD /* MenuBar */ = {
+			isa = PBXGroup;
+			children = (
+				FC5EF81921640A7F00F00ABA /* MenuBarViewController.swift */,
+				FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */,
+			);
+			path = MenuBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,8 +343,9 @@
 			files = (
 				FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */,
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
-				FC25B1F52161A71700046A63 /* TitleCell.xib in Resources */,
+				FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */,
 				FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */,
+				FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */,
 				FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */,
@@ -360,20 +410,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC11DF65215DD5E8009E166B /* SummaryViewController.swift in Sources */,
-				FCBC1A5621608D310062CFD5 /* TitleCell.swift in Sources */,
+				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
+				FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */,
 				FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */,
+				FC5EF81A21640A7F00F00ABA /* MenuBarViewController.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
+				FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */,
 				FCEFDD53215EA16C00C5FA7F /* LocalStorageService.swift in Sources */,
 				FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */,
 			);
