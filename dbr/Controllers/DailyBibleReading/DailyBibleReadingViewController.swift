@@ -63,7 +63,7 @@ class DailyBibleReadingViewController: UIViewController {
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {
-        Store.shared.shouldShowMenu.value = true
+        Store.shared.menuIsVisible.value = true
     }
     
 }

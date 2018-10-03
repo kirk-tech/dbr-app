@@ -21,11 +21,14 @@ struct Store {
         }
     }
     
+    // Properties
     var date = StoreItem(Date())
     var dbr = StoreItem<DBR?>(nil)
     var scriptureIndex = StoreItem(-1)
-    var shouldShowMenu = StoreItem(false)
+    var menuIsVisible = StoreItem(false)
+    
 }
+
 
 struct StoreItem<T> {
     

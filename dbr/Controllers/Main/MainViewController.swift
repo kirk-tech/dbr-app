@@ -12,12 +12,12 @@ import RxSwift
 
 class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     
-    var menuIsVisible = false
     let disposeBag = DisposeBag()
     var dbrView: UIView?
     
     var dbrViewLeadingAnchor: NSLayoutConstraint?
     var dbrViewTrailingAnchor: NSLayoutConstraint?
+    var menuViewLeadingAnchor: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +34,13 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addSubview(dbrController.view)
         
         menuBarController.view.translatesAutoresizingMaskIntoConstraints = false
-        menuBarController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         menuBarController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        menuBarController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         let menuWidthConstraint = menuBarController.view.widthAnchor.constraint(equalToConstant: 130)
         menuWidthConstraint.priority = UILayoutPriority(999) // Makes annoying warning go away
         menuWidthConstraint.isActive = true
+        self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -130)
+        self.menuViewLeadingAnchor?.isActive = true
         
         dbrView = dbrController.view
         dbrView?.translatesAutoresizingMaskIntoConstraints = false
@@ -50,23 +51,23 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.dbrViewLeadingAnchor?.isActive = true
         self.dbrViewTrailingAnchor?.isActive = true
         
-        Store.shared.shouldShowMenu.change.subscribe(onNext: { shouldShowMenu in
-            if shouldShowMenu {
-                self.showMenu()
-            } else {
-                self.hideMenu()
-            }
-        }).disposed(by: disposeBag)
+        Store.shared.menuIsVisible.change.subscribe { menuIsVisible in
+            if menuIsVisible.element! { self.showMenu() }
+            else { self.hideMenu() }
+        }.disposed(by: disposeBag)
         
     }
     
     func showMenu() {
         
-        guard !self.menuIsVisible else { return }
+        guard !Store.shared.menuIsVisible.value else { return }
         
         // Move the dbr view over 130
         self.dbrViewLeadingAnchor?.constant = 130
         self.dbrViewTrailingAnchor?.constant = 130
+        self.menuViewLeadingAnchor?.constant = 0
+        
+        animateMenuMove()
         
         // Create a view and add it over the top of
         // the area where the dbr view is now sitting
@@ -88,23 +89,39 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer.delegate = self
         coverView.addGestureRecognizer(gestureRecognizer)
         
-        menuIsVisible = true
-        
     }
     
     @objc func handleCloseSwipe(gestureRecognizer: UIGestureRecognizer) {
-        hideMenu()
+        Store.shared.menuIsVisible.value = false
     }
     
     func hideMenu() {
-        guard self.menuIsVisible else { return }
+        guard Store.shared.menuIsVisible.value else { return }
         if let coverView = self.view.viewWithTag(2932) {
             coverView.removeFromSuperview()
         }
         // Move the dbr view over 130
         self.dbrViewLeadingAnchor?.constant = 0
         self.dbrViewTrailingAnchor?.constant = 0
-        menuIsVisible = false
+        self.menuViewLeadingAnchor?.constant = -130
+        
+        animateMenuMove()
+        
+    }
+    
+    func animateMenuMove() {
+        //        UIView.animate(withDuration: 0.3) {
+        //            self.dbrView?.layoutIfNeeded()
+        //        }
+        //        UIView.animate(withDuration: 1, animations: {
+        //            self.dbrView?.layoutIfNeeded()
+        //        }, completion: { _ in
+        //            print("done animating open")
+        //        })
+        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .linear, animations: {
+            self.view.layoutIfNeeded()
+        })
+        animator.startAnimation()
     }
     
 }
