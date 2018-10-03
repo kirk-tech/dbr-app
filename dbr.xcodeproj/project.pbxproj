@@ -31,6 +31,7 @@
 		FC7EF1D22164E169009FE58A /* Observable+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D12164E169009FE58A /* Observable+cache.swift */; };
 		FC7EF1D42164EA0B009FE58A /* Date+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D32164EA0B009FE58A /* Date+format.swift */; };
 		FC7EF1D82165392B009FE58A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D72165392B009FE58A /* Store.swift */; };
+		FC7EF1DA21656307009FE58A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D921656307009FE58A /* Constants.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -82,6 +83,7 @@
 		FC7EF1D12164E169009FE58A /* Observable+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+cache.swift"; sourceTree = "<group>"; };
 		FC7EF1D32164EA0B009FE58A /* Date+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+format.swift"; sourceTree = "<group>"; };
 		FC7EF1D72165392B009FE58A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		FC7EF1D921656307009FE58A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				FCEFDD3B215DE20300C5FA7F /* Model */,
 				FC11DF86215DD98A009E166B /* Services */,
 				FCEFDD3E215DE37C00C5FA7F /* Errors.swift */,
+				FC7EF1D921656307009FE58A /* Constants.swift */,
 				FC7EF1D72165392B009FE58A /* Store.swift */,
 				FC11DF62215DD5E7009E166B /* AppDelegate.swift */,
 				FC11DF69215DD5E9009E166B /* Assets.xcassets */,
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7EF1D82165392B009FE58A /* Store.swift in Sources */,
+				FC7EF1DA21656307009FE58A /* Constants.swift in Sources */,
 				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,

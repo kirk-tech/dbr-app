@@ -36,10 +36,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         menuBarController.view.translatesAutoresizingMaskIntoConstraints = false
         menuBarController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         menuBarController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        let menuWidthConstraint = menuBarController.view.widthAnchor.constraint(equalToConstant: 130)
+        let menuWidthConstraint = menuBarController.view.widthAnchor.constraint(equalToConstant: Constants.menuWidth)
         menuWidthConstraint.priority = UILayoutPriority(999) // Makes annoying warning go away
         menuWidthConstraint.isActive = true
-        self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: -130)
+        self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: Constants.menuWidth * -1)
         self.menuViewLeadingAnchor?.isActive = true
         
         dbrView = dbrController.view
@@ -62,9 +62,8 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         
         guard !Store.shared.menuIsVisible.value else { return }
         
-        // Move the dbr view over 130
-        self.dbrViewLeadingAnchor?.constant = 130
-        self.dbrViewTrailingAnchor?.constant = 130
+        self.dbrViewLeadingAnchor?.constant = Constants.menuWidth
+        self.dbrViewTrailingAnchor?.constant = Constants.menuWidth
         self.menuViewLeadingAnchor?.constant = 0
         
         animateMenuMove()
@@ -80,7 +79,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         coverView.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
         coverView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         coverView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        coverView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 130).isActive = true
+        coverView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: Constants.menuWidth).isActive = true
         
         // Add a swipe gesture recognizer to the cover view
         // so we know when user trys to close view
@@ -100,10 +99,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         if let coverView = self.view.viewWithTag(2932) {
             coverView.removeFromSuperview()
         }
-        // Move the dbr view over 130
+        // Move the dbr view over
         self.dbrViewLeadingAnchor?.constant = 0
         self.dbrViewTrailingAnchor?.constant = 0
-        self.menuViewLeadingAnchor?.constant = -130
+        self.menuViewLeadingAnchor?.constant = Constants.menuWidth * -1
         
         animateMenuMove()
         
