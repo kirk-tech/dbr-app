@@ -11,6 +11,7 @@ import RxSwift
 
 class DailyBibleReadingViewController: UIViewController {
     
+    @IBOutlet weak var dbrScrollingWrapper: UIScrollView!
     @IBOutlet weak var titleTableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewTrailingConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollViewLeadingConstraint: NSLayoutConstraint!
@@ -25,12 +26,18 @@ class DailyBibleReadingViewController: UIViewController {
         self.titleTable.dataSource = self
         
         AppDelegate.global.store?.date.change.subscribe(onNext: self.loadNewDbr).disposed(by: disposeBag)
+        AppDelegate.global.store?.dbrIsLoading.change.subscribe(onNext: self.toggleLoadingView).disposed(by: disposeBag)
 
         CompassService.todaysReading()
             .subscribe(onNext: self.updateViewWithNewDBR)
             .disposed(by: self.disposeBag)
         
         super.viewDidLoad()
+    }
+    
+    func toggleLoadingView(_ isLoading: Bool) -> Void {
+        let isHidden = isLoading
+        self.dbrScrollingWrapper.isHidden = isHidden
     }
     
     func updatePastorsNotes() -> Void {
@@ -49,11 +56,6 @@ class DailyBibleReadingViewController: UIViewController {
         AppDelegate.global.store?.dbr.value = dbr
         self.updatePastorsNotes()
         self.titleTable.reloadData()
-        print("reloading title table")
-//        let titleTableHeight = self.titleTable.contentSize.height
-//        if titleTableHeight > 0 {
-//            self.titleTableHeightConstraint?.constant = titleTableHeight
-//        }
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
@@ -62,7 +64,7 @@ class DailyBibleReadingViewController: UIViewController {
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {
-        Store.shared.menuIsVisible.value = true
+        AppDelegate.global.store?.menuIsVisible.value = true
     }
     
 }
@@ -84,7 +86,6 @@ extension DailyBibleReadingViewController:  UITableViewDataSource, UITableViewDe
 
 
 class TitleCell: UITableViewCell {
-    
     @IBOutlet weak var titleLabel: UILabel!
 }
 

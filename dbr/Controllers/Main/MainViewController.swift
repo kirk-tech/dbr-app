@@ -51,7 +51,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.dbrViewLeadingAnchor?.isActive = true
         self.dbrViewTrailingAnchor?.isActive = true
         
-        Store.shared.menuIsVisible.change.subscribe { menuIsVisible in
+        AppDelegate.global.store?.menuIsVisible.change.subscribe { menuIsVisible in
             if menuIsVisible.element! { self.showMenu() }
             else { self.hideMenu() }
         }.disposed(by: disposeBag)
@@ -60,7 +60,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     
     func showMenu() {
         
-        guard !Store.shared.menuIsVisible.value else { return }
+        print("showing menu")
         
         self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth
         self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth
@@ -91,11 +91,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     @objc func handleCloseSwipe(gestureRecognizer: UIGestureRecognizer) {
-        Store.shared.menuIsVisible.value = false
+        AppDelegate.global.store?.menuIsVisible.value = false
     }
     
     func hideMenu() {
-        guard Store.shared.menuIsVisible.value else { return }
         if let coverView = self.view.viewWithTag(2932) {
             coverView.removeFromSuperview()
         }

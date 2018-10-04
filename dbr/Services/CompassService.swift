@@ -26,9 +26,11 @@ struct CompassService {
         let parameters = [
             "date": dateId
         ]
+        AppDelegate.global.store?.dbrIsLoading.value = true
         return HttpService.get("\(CompassService.api)/dbr-reading", parameters: parameters)
             .map(into: DBR.self)
             .cache(usingKey: dbrCacheId)
+            .setDoneLoading()
     }
     
 }

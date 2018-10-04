@@ -10,27 +10,19 @@ import Foundation
 import RxSwift
 
 
-struct Store {
-    
-    static var shared: Store {
-        get {
-            return AppDelegate.global.store!
-        }
-        set {
-            AppDelegate.global.store = newValue
-        }
-    }
+class Store {
     
     // Properties
     var date = StoreItem(Date())
     var dbr = StoreItem<DBR?>(nil)
     var scriptureIndex = StoreItem(-1)
     var menuIsVisible = StoreItem(false)
+    var dbrIsLoading = StoreItem(false)
     
 }
 
 
-struct StoreItem<T> {
+class StoreItem<T> {
     
     private let _subject: BehaviorSubject<T>
     var change: Observable<T> {

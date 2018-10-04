@@ -21,8 +21,8 @@ class ScriptureViewController: UIViewController {
     
     var address: String? {
         get {
-            let index = Store.shared.scriptureIndex.value
-            let verses = Store.shared.dbr.value?.verses
+            let index = AppDelegate.global.store!.scriptureIndex.value
+            let verses = AppDelegate.global.store!.dbr.value?.verses
             return verses?[index]
         }
     }
@@ -32,7 +32,7 @@ class ScriptureViewController: UIViewController {
         self.passageTable.delegate = self
         self.passageTable.dataSource = self
         
-        Store.shared.scriptureIndex.value += 1
+        AppDelegate.global.store?.scriptureIndex.value += 1
         self.titleAddress.text = address
         ESVService.getPassage(address!).subscribe(onNext: { passage in
             guard let psg = passage else {
@@ -44,7 +44,6 @@ class ScriptureViewController: UIViewController {
     }
     
     func updateViewWithNewPassage(_ passage: String) {
-        print("Count: \(passage.count)")
         self.passages = passage.components(separatedBy: "\n\n")
         self.passageTable.reloadData()
         
@@ -62,8 +61,8 @@ class ScriptureViewController: UIViewController {
     
     @IBAction func didSwipeLeft(_ sender: Any) {
         let canMoveToAnotherScripture: Bool = {
-            let index = Store.shared.scriptureIndex.value
-            let verseCount = Store.shared.dbr.value!.verses.count
+            let index = AppDelegate.global.store!.scriptureIndex.value
+            let verseCount = AppDelegate.global.store!.dbr.value!.verses.count
             return (index + 1) < verseCount
         }()
         guard canMoveToAnotherScripture else { return }
@@ -76,18 +75,10 @@ class ScriptureViewController: UIViewController {
 extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("#### TABLE #####")
-        print("Table count: \(self.passages.count)")
-        for psg in self.passages {
-            print(psg.count)
-        }
-        print("################")
-        
         return self.passages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("making cell. stat: \(self.passageTable.contentSize.height)")
         let cell = self.passageTable.dequeueReusableCell(withIdentifier: "ScriptureCell") as! ScriptureCell
         cell.scriptureLabel.text = self.passages[indexPath.row]
         cell.scriptureLabel.setLineSpacing(2.0, multiple: 1.5)
@@ -97,7 +88,5 @@ extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
 }
 
 class ScriptureCell: UITableViewCell {
-    
     @IBOutlet weak var scriptureLabel: UILabel!
-    
 }
