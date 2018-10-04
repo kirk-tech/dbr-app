@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Constants {
-    static let menuWidth: CGFloat = 130
-    
+class UIConstants {
+    static let menuWidth: CGFloat = 80
+    static let primaryColor = UIColor.init(hex: "#4BC4C6")!
 }

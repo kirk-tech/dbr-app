@@ -18,19 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="app_icon_white" translatesAutoresizingMaskIntoConstraints="NO" id="4ay-Ge-CfR">
-                                <rect key="frame" x="0.0" y="137" width="374" height="199"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="app_icon_white" translatesAutoresizingMaskIntoConstraints="NO" id="4ay-Ge-CfR">
+                                <rect key="frame" x="63" y="220.5" width="249" height="246"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="249" id="uVX-if-3kB"/>
+                                    <constraint firstAttribute="height" constant="246" id="ykd-ql-WLj"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Bible Reading" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NoW-6D-gPn">
-                                <rect key="frame" x="16" y="372" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.60392156862745094" green="0.76862745098039209" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.29411764705882354" green="0.76862745098039209" blue="0.77647058823529413" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="4ay-Ge-CfR" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="FT4-e2-HGr"/>
+                            <constraint firstItem="4ay-Ge-CfR" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="qMS-V2-VZE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>

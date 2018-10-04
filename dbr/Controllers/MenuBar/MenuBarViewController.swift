@@ -18,6 +18,8 @@ class MenuBarViewController: UIViewController {
     @IBOutlet weak var downArrow: UIImageView!
     
     override func viewDidLoad() {
+        
+        self.view.backgroundColor = UIConstants.primaryColor
         self.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
         self.updateDateLabel()
