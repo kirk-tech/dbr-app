@@ -47,8 +47,12 @@ class ScriptureViewController: UIViewController {
         print("Count: \(passage.count)")
         self.passages = passage.components(separatedBy: "\n\n")
         self.passageTable.reloadData()
-        print("contentSize.height: \(self.passageTable.contentSize.height)")
-        // self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
+        
+        // HACK: Table not laying out correctly
+        // so here we for it to layout right away
+        // and then forcefully set the height
+        self.passageTable.layoutIfNeeded()
+        self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {
@@ -83,7 +87,7 @@ extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("making cell")
+        print("making cell. stat: \(self.passageTable.contentSize.height)")
         let cell = self.passageTable.dequeueReusableCell(withIdentifier: "ScriptureCell") as! ScriptureCell
         cell.scriptureLabel.text = self.passages[indexPath.row]
         cell.scriptureLabel.setLineSpacing(2.0, multiple: 1.5)
