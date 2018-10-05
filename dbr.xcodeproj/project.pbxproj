@@ -27,12 +27,15 @@
 		FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */; };
 		FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */; };
 		FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */; };
+		FC7B1E4B2166F583003FEB09 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7B1E4A2166F583003FEB09 /* OpenSans-SemiBold.ttf */; };
+		FC7B1E4D21672EE3003FEB09 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7B1E4C21672EE3003FEB09 /* OpenSans-Bold.ttf */; };
 		FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1CF2164D03C009FE58A /* CacheService.swift */; };
 		FC7EF1D22164E169009FE58A /* Observable+cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D12164E169009FE58A /* Observable+cache.swift */; };
 		FC7EF1D42164EA0B009FE58A /* Date+format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D32164EA0B009FE58A /* Date+format.swift */; };
 		FC7EF1D82165392B009FE58A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D72165392B009FE58A /* Store.swift */; };
 		FC7EF1DA21656307009FE58A /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D921656307009FE58A /* UIConstants.swift */; };
 		FC7EF1DC21657210009FE58A /* String+Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1DB21657210009FE58A /* String+Indexes.swift */; };
+		FC86F5142166A3AC00F41CFF /* ScriptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -82,12 +85,15 @@
 		FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyBibleReading.storyboard; sourceTree = "<group>"; };
 		FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuBar.storyboard; sourceTree = "<group>"; };
 		FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
+		FC7B1E4A2166F583003FEB09 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../../../../../Downloads/fonts/Open_Sans/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		FC7B1E4C21672EE3003FEB09 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../../Downloads/fonts/Open_Sans/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		FC7EF1CF2164D03C009FE58A /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		FC7EF1D12164E169009FE58A /* Observable+cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+cache.swift"; sourceTree = "<group>"; };
 		FC7EF1D32164EA0B009FE58A /* Date+format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+format.swift"; sourceTree = "<group>"; };
 		FC7EF1D72165392B009FE58A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		FC7EF1D921656307009FE58A /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		FC7EF1DB21657210009FE58A /* String+Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Indexes.swift"; sourceTree = "<group>"; };
+		FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureBuilder.swift; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -160,6 +166,7 @@
 		FC11DF61215DD5E7009E166B /* dbr */ = {
 			isa = PBXGroup;
 			children = (
+				FC86F5122166A38B00F41CFF /* Utilities */,
 				FCF32AFE2164703A004BDCBD /* Controllers */,
 				FC25B1FE2161F10100046A63 /* Fonts */,
 				FCEFDD42215DE48200C5FA7F /* Extensions */,
@@ -200,9 +207,19 @@
 			isa = PBXGroup;
 			children = (
 				FC25B1FF2161F14800046A63 /* HeadlandOne-Regular.ttf */,
+				FC7B1E4A2166F583003FEB09 /* OpenSans-SemiBold.ttf */,
 				FC25B2002161F14800046A63 /* OpenSans-Regular.ttf */,
+				FC7B1E4C21672EE3003FEB09 /* OpenSans-Bold.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		FC86F5122166A38B00F41CFF /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		FCEFDD3B215DE20300C5FA7F /* Model */ = {
@@ -362,8 +379,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC7B1E4D21672EE3003FEB09 /* OpenSans-Bold.ttf in Resources */,
 				FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */,
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
+				FC7B1E4B2166F583003FEB09 /* OpenSans-SemiBold.ttf in Resources */,
 				FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */,
 				FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */,
 				FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */,
@@ -451,6 +470,7 @@
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
+				FC86F5142166A3AC00F41CFF /* ScriptureBuilder.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,

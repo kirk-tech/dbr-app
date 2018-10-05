@@ -45,7 +45,6 @@ struct CacheService {
     }
     
     func persist<T: Codable>(_ data: T, key: String, ttl: Int = 86400) -> Void {
-        
         let url = destination.appendingPathComponent(key, isDirectory: false)
         let ttd = Date().timeIntervalSince1970 + Double(ttl)
         let model = CacheModel(ttd: ttd, payload: data)
@@ -62,17 +61,16 @@ struct CacheService {
     }
     
     func retrieve<T: Codable>(_ key: String) -> T? {
-        print("retrieving key: \(key)")
         guard
             let data = try? Data(contentsOf: destination.appendingPathComponent(key, isDirectory: false)),
             let model = try? JSONDecoder().decode(CacheModel<T>.self, from: data)
             else { return nil }
 
-        guard model.isStale() else {
+        guard !model.isStale() else {
             // TODO: Remove from cache
             return nil
         }
-        print("got cached data")
+
         return model.payload
     }
     

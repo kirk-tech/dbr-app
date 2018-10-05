@@ -80,8 +80,14 @@ extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.passageTable.dequeueReusableCell(withIdentifier: "ScriptureCell") as! ScriptureCell
-        cell.scriptureLabel.text = self.passages[indexPath.row]
-        cell.scriptureLabel.setLineSpacing(2.0, multiple: 1.5)
+        let scripture = self.passages[indexPath.row]
+        let builder = ScriptureBuilder(for: scripture)
+        builder.moveVerseNumbersToSubscript()
+        builder.setVerseNumberFont(UIFont(name: "OpenSans-Bold", size: 9)!)
+        
+        cell.scriptureLabel.attributedText = builder.attributedScripture
+        cell.scriptureLabel.setLineSpacing(2.0, multiple: 1)
+        
         return cell
     }
     
