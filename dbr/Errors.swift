@@ -18,6 +18,7 @@ struct DBRError: Error {
         } else {
             self.apiError = nil
         }
+        print("DBR Error \nmessage: \(message)\napiError: \(apiError)")
     }
 }
 

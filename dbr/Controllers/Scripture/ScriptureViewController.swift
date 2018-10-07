@@ -31,6 +31,8 @@ class ScriptureViewController: UIViewController {
         
         self.passageTable.delegate = self
         self.passageTable.dataSource = self
+        self.passageTable.sectionHeaderHeight = 0
+        self.passageTable.sectionFooterHeight = 0
         
         AppDelegate.global.store?.scriptureIndex.value += 1
         self.titleAddress.text = address
@@ -44,11 +46,11 @@ class ScriptureViewController: UIViewController {
     }
     
     func updateViewWithNewPassage(_ passage: String) {
-        self.passages = passage.components(separatedBy: "\n\n")
+        self.passages = ScriptureParser.splitScriptureIntoChapters(passage)
         self.passageTable.reloadData()
         
         // HACK: Table not laying out correctly
-        // so here we for it to layout right away
+        // so here we force it to layout right away
         // and then forcefully set the height
         self.passageTable.layoutIfNeeded()
         self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
@@ -65,8 +67,12 @@ class ScriptureViewController: UIViewController {
             let verseCount = AppDelegate.global.store!.dbr.value!.verses.count
             return (index + 1) < verseCount
         }()
-        guard canMoveToAnotherScripture else { return }
-        let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
+        guard
+            canMoveToAnotherScripture,
+            let scriptureViewController = UIViewController.initWithStoryboard(ScriptureViewController.self)
+        else {
+            return
+        }
         navigationController?.pushViewController(scriptureViewController, animated: true)
     }
     
@@ -81,12 +87,15 @@ extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = self.passageTable.dequeueReusableCell(withIdentifier: "ScriptureCell") as! ScriptureCell
         let scripture = self.passages[indexPath.row]
-        let builder = ScriptureBuilder(for: scripture)
-        builder.moveVerseNumbersToSubscript()
-        builder.setVerseNumberFont(UIFont(name: "OpenSans-Bold", size: 9)!)
+        
+        let builder = ScriptureParser(for: scripture)
+        builder.applyAttributeToVerseNumbers(.baselineOffset, value: 8)
+        builder.applyAttributeToVerseNumbers(.font, value: UIFont(name: "OpenSans-Regular", size: 9)!)
+        builder.applyAttributeToVerseNumbers(.foregroundColor, value: UIColor.lightGray)
+        builder.applyAttributeToSectionTitles(.font, value: UIFont(name: "OpenSans-SemiBold", size: 15)!)
         
         cell.scriptureLabel.attributedText = builder.attributedScripture
-        cell.scriptureLabel.setLineSpacing(2.0, multiple: 1)
+        // cell.scriptureLabel.setLineSpacing(2.0, multiple: 1)
         
         return cell
     }

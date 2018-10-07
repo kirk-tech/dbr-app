@@ -22,8 +22,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let dbrController = UIViewController.initWithStoryboard(named: "DailyBibleReading") as! DailyBibleReadingViewController
-        let menuBarController = UIViewController.initWithStoryboard(named: "MenuBar") as! MenuBarViewController
+        guard
+            let dbrController = UIViewController.initWithStoryboard(DailyBibleReadingViewController.self),
+            let menuBarController = UIViewController.initWithStoryboard(MenuBarViewController.self)
+        else {
+            fatalError()
+        }
         
         self.addChildViewController(dbrController)
         self.addChildViewController(menuBarController)
@@ -104,22 +108,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.menuViewLeadingAnchor?.constant = UIConstants.menuWidth * -1
         
         animateMenuMove()
-        
     }
     
     func animateMenuMove() {
-        //        UIView.animate(withDuration: 0.3) {
-        //            self.dbrView?.layoutIfNeeded()
-        //        }
-        //        UIView.animate(withDuration: 1, animations: {
-        //            self.dbrView?.layoutIfNeeded()
-        //        }, completion: { _ in
-        //            print("done animating open")
-        //        })
-        let animator = UIViewPropertyAnimator(duration: 0.2, curve: .linear, animations: {
+        UIViewPropertyAnimator(duration: 0.2, curve: .linear, animations: {
             self.view.layoutIfNeeded()
-        })
-        animator.startAnimation()
+        }).startAnimation()
     }
     
 }

@@ -10,8 +10,10 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    static func initWithStoryboard<T: UIViewController>(named name: String) -> T? {
-        let storyboard = UIStoryboard(name: name, bundle: nil)
-        return storyboard.instantiateViewController(withIdentifier: "\(name)ViewController") as? T
+    static func initWithStoryboard<T: UIViewController>(_ controllerType: T.Type) -> T? {
+        let className = String(describing: controllerType)
+        let storyboardName = className.replacingOccurrences(of: "ViewController", with: "")
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        return storyboard.instantiateViewController(withIdentifier: className) as? T
     }
 }

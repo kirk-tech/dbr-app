@@ -25,12 +25,10 @@ class DailyBibleReadingViewController: UIViewController {
         self.titleTable.delegate = self
         self.titleTable.dataSource = self
         
-        AppDelegate.global.store?.date.change.subscribe(onNext: self.loadNewDbr).disposed(by: disposeBag)
+        AppDelegate.global.store?.date.change.subscribe(onNext: self.loadDBR).disposed(by: disposeBag)
         AppDelegate.global.store?.dbrIsLoading.change.subscribe(onNext: self.toggleLoadingView).disposed(by: disposeBag)
 
-        CompassService.todaysReading()
-            .subscribe(onNext: self.updateViewWithNewDBR)
-            .disposed(by: self.disposeBag)
+        AppDelegate.global.store?.date.value = Date()
         
         super.viewDidLoad()
     }
@@ -46,20 +44,26 @@ class DailyBibleReadingViewController: UIViewController {
         self.pastorsNotes.setLineSpacing(2.0, multiple: 1.5)
     }
     
-    func loadNewDbr(_ date: Date) -> Void {
+    func loadDBR(_ date: Date) -> Void {
         CompassService.reading(forDate: date)
+            .retry(3)
             .subscribe(onNext: self.updateViewWithNewDBR)
             .disposed(by: self.disposeBag)
     }
     
     func updateViewWithNewDBR(_ dbr: DBR?) {
+        guard dbr != nil else {
+            return
+        }
         AppDelegate.global.store?.dbr.value = dbr
         self.updatePastorsNotes()
         self.titleTable.reloadData()
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
-        let scriptureViewController = UIViewController.initWithStoryboard(named: "Scripture") as! ScriptureViewController
+        guard let scriptureViewController = UIViewController.initWithStoryboard(ScriptureViewController.self) else {
+            return
+        }
         navigationController?.pushViewController(scriptureViewController, animated: true)
     }
     

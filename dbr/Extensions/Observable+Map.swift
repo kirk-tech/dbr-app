@@ -22,6 +22,11 @@ extension Result: Mapable {
 
 extension Observable where E: Mapable {
     func map<T: Codable>(into t: T.Type) -> Observable<T?> {
-        return self.map { result -> T? in try? t.init(from: result.body()) }
+        return self.map { result -> T? in
+            if (String(describing: t) == "DBR") {
+                print(result.body())
+            }
+            return try? t.init(from: result.body())
+        }
     }
 }

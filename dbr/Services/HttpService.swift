@@ -15,9 +15,14 @@ struct HttpService {
     private static func sendPost(_ endpoint: String, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, encoding: ParameterEncoding = JSONEncoding.default) -> Observable<Result<Any>> {
         return Observable.create { (observer) -> Disposable in
             let req = Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
-                guard response.result.isSuccess else {
+                guard let res = response.response, response.result.isSuccess else {
                     debugPrint(response)
                     return observer.onError(DBRError(data: response.data, message: "Request failed"))
+                }
+                guard [200, 202].contains(res.statusCode) else {
+                    debugPrint(response)
+                    let error = String(describing: response.result.body())
+                    return observer.onError(DBRError(data: response.data, message: "Request failed: \(error)"))
                 }
                 guard let _ = response.result.value else {
                     debugPrint(response)
@@ -36,10 +41,14 @@ struct HttpService {
     private static func sendGet(_ endpoint: String, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> Observable<Result<Any>> {
         return Observable.create { (observer) -> Disposable in
             let req = Alamofire.request(endpoint, method: .get, parameters: parameters, headers: headers).responseJSON { response in
-                
-                guard response.result.isSuccess else {
+                guard let res = response.response, response.result.isSuccess else {
                     debugPrint(response)
                     return observer.onError(DBRError(data: response.data, message: "Request failed"))
+                }
+                guard [200, 202].contains(res.statusCode) else {
+                    debugPrint(response)
+                    let error = String(describing: response.result.body())
+                    return observer.onError(DBRError(data: response.data, message: "Request failed: \(error)"))
                 }
                 guard let _ = response.result.value else {
                     debugPrint(response)
@@ -47,9 +56,7 @@ struct HttpService {
                 }
                 observer.onNext(response.result)
                 observer.onCompleted()
-                
             }
-            
             return Disposables.create {
                 req.cancel()
             }
@@ -95,6 +102,3 @@ extension HttpService {
         return HttpService.sendGet(endpoint, parameters: parameters, headers: headers)
     }
 }
-
-
-// curl -v -H "Accept-Language: en;q=1.0" -H "Authorization: Token c8e9443e501ba6ca417f14d0407f2d7459a22a0f" -H "User-Agent: dbr/1.0 (com.kirk.dbr; build:1; iOS 11.4.0) Alamofire/4.7.3" -H "Accept-Encoding: gzip;q=1.0, compress;q=0.5" https://api.esv.org/v3/passage/text?q=Isaiah%2022-23

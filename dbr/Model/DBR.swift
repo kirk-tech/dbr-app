@@ -18,4 +18,5 @@ struct DBR: Codable {
         case verses
         case pastorsNotes = "pastors_notes"
     }
+    
 }

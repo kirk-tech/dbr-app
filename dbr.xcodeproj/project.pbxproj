@@ -35,7 +35,9 @@
 		FC7EF1D82165392B009FE58A /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D72165392B009FE58A /* Store.swift */; };
 		FC7EF1DA21656307009FE58A /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1D921656307009FE58A /* UIConstants.swift */; };
 		FC7EF1DC21657210009FE58A /* String+Indexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC7EF1DB21657210009FE58A /* String+Indexes.swift */; };
-		FC86F5142166A3AC00F41CFF /* ScriptureBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */; };
+		FC86F5142166A3AC00F41CFF /* ScriptureParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86F5132166A3AC00F41CFF /* ScriptureParser.swift */; };
+		FC8AEB882169740C00B4F6D7 /* Int+digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB872169740C00B4F6D7 /* Int+digits.swift */; };
+		FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB892169742600B4F6D7 /* Array+prepend.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
@@ -93,7 +95,9 @@
 		FC7EF1D72165392B009FE58A /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		FC7EF1D921656307009FE58A /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 		FC7EF1DB21657210009FE58A /* String+Indexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Indexes.swift"; sourceTree = "<group>"; };
-		FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureBuilder.swift; sourceTree = "<group>"; };
+		FC86F5132166A3AC00F41CFF /* ScriptureParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureParser.swift; sourceTree = "<group>"; };
+		FC8AEB872169740C00B4F6D7 /* Int+digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+digits.swift"; sourceTree = "<group>"; };
+		FC8AEB892169742600B4F6D7 /* Array+prepend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+prepend.swift"; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
@@ -217,7 +221,7 @@
 		FC86F5122166A38B00F41CFF /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				FC86F5132166A3AC00F41CFF /* ScriptureBuilder.swift */,
+				FC86F5132166A3AC00F41CFF /* ScriptureParser.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -245,6 +249,8 @@
 				FC7EF1DB21657210009FE58A /* String+Indexes.swift */,
 				FCEFED46216682EC003E4D92 /* UIColor+hex.swift */,
 				FCEFED4B21669321003E4D92 /* Observable+setDoneLoading.swift */,
+				FC8AEB872169740C00B4F6D7 /* Int+digits.swift */,
+				FC8AEB892169742600B4F6D7 /* Array+prepend.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -460,6 +466,7 @@
 				FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */,
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
+				FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */,
 				FCEFED47216682EC003E4D92 /* UIColor+hex.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */,
@@ -468,9 +475,10 @@
 				FC7EF1DC21657210009FE58A /* String+Indexes.swift in Sources */,
 				FC5EF81A21640A7F00F00ABA /* MenuBarViewController.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */,
+				FC8AEB882169740C00B4F6D7 /* Int+digits.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
-				FC86F5142166A3AC00F41CFF /* ScriptureBuilder.swift in Sources */,
+				FC86F5142166A3AC00F41CFF /* ScriptureParser.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
