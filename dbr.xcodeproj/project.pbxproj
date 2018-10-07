@@ -26,6 +26,7 @@
 		FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC5EF81B21640F7200F00ABA /* MainViewController.swift */; };
 		FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */; };
 		FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */; };
+		FC61BA0D216AC278004B0060 /* Date+equality.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC61BA0C216AC278004B0060 /* Date+equality.swift */; };
 		FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */; };
 		FC7B1E4B2166F583003FEB09 /* OpenSans-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7B1E4A2166F583003FEB09 /* OpenSans-SemiBold.ttf */; };
 		FC7B1E4D21672EE3003FEB09 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FC7B1E4C21672EE3003FEB09 /* OpenSans-Bold.ttf */; };
@@ -86,6 +87,7 @@
 		FC5EF81B21640F7200F00ABA /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC5EF81D21640FD700F00ABA /* DailyBibleReading.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DailyBibleReading.storyboard; sourceTree = "<group>"; };
 		FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuBar.storyboard; sourceTree = "<group>"; };
+		FC61BA0C216AC278004B0060 /* Date+equality.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+equality.swift"; sourceTree = "<group>"; };
 		FC6E81BB2162C38F00522C5F /* ScriptureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureViewController.swift; sourceTree = "<group>"; };
 		FC7B1E4A2166F583003FEB09 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-SemiBold.ttf"; path = "../../../../../Downloads/fonts/Open_Sans/OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		FC7B1E4C21672EE3003FEB09 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "OpenSans-Bold.ttf"; path = "../../../../../Downloads/fonts/Open_Sans/OpenSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 				FCEFED4B21669321003E4D92 /* Observable+setDoneLoading.swift */,
 				FC8AEB872169740C00B4F6D7 /* Int+digits.swift */,
 				FC8AEB892169742600B4F6D7 /* Array+prepend.swift */,
+				FC61BA0C216AC278004B0060 /* Date+equality.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
 				FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */,
 				FC86F5142166A3AC00F41CFF /* ScriptureParser.swift in Sources */,
+				FC61BA0D216AC278004B0060 /* Date+equality.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
