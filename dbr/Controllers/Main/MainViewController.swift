@@ -18,25 +18,34 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     var dbrViewLeadingAnchor: NSLayoutConstraint?
     var dbrViewTrailingAnchor: NSLayoutConstraint?
     var menuViewLeadingAnchor: NSLayoutConstraint?
+    var settingsViewLeadingAnchor: NSLayoutConstraint?
+    var settingsViewTrailingAnchor: NSLayoutConstraint?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard
             let dbrController = UIViewController.initWithStoryboard(DailyBibleReadingViewController.self),
-            let menuBarController = UIViewController.initWithStoryboard(MenuBarViewController.self)
+            let menuBarController = UIViewController.initWithStoryboard(MenuBarViewController.self),
+            let settingsController = UIViewController.initWithStoryboard(SettingsViewController.self)
         else {
             fatalError()
         }
         
         self.addChildViewController(dbrController)
         self.addChildViewController(menuBarController)
+        self.addChildViewController(settingsController)
         
         // Order is important here - dbr view must get added
         // last so it sits on top of the menu
         self.view.addSubview(menuBarController.view)
         self.view.addSubview(dbrController.view)
+        self.view.addSubview(settingsController.view)
         
+        
+        //
+        //  Place the Menu Bar
+        //
         menuBarController.view.translatesAutoresizingMaskIntoConstraints = false
         menuBarController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         menuBarController.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
@@ -46,6 +55,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0) // UIConstants.menuWidth * -1)
         self.menuViewLeadingAnchor?.isActive = true
         
+        
+        //
+        //  Place the DBR view
+        //
         dbrView = dbrController.view
         dbrView?.translatesAutoresizingMaskIntoConstraints = false
         dbrView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
@@ -55,6 +68,23 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.dbrViewLeadingAnchor?.isActive = true
         self.dbrViewTrailingAnchor?.isActive = true
         
+        
+        //
+        // Place the Settings view
+        //
+        let settingsView = settingsController.view
+        settingsView?.translatesAutoresizingMaskIntoConstraints = false
+        settingsView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        settingsView?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        self.settingsViewLeadingAnchor = settingsView?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
+        self.settingsViewTrailingAnchor = settingsView?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        
+        settingsView?.backgroundColor = .green
+        
+        
+        //
+        // Setup listeners for events
+        //
         AppDelegate.global.store?.menuIsVisible.change.subscribe { menuIsVisible in
             if menuIsVisible.element! { self.showMenu() }
             else { self.hideMenu() }
@@ -63,9 +93,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func showMenu() {
-        
-        print("showing menu")
-        
+                
         self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth
         self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth
         // self.menuViewLeadingAnchor?.constant = 0

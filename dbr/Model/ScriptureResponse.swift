@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ESVPassageResponse: Codable {
+struct ScriptureResponse: Codable {
 //    let query: String
 //    let canonical: String
 //    let parsed: [String]

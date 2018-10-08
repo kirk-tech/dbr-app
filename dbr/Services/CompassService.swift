@@ -11,7 +11,7 @@ import RxSwift
 
 struct CompassService {
     
-    static let api = "https://1qium182f6.execute-api.us-west-1.amazonaws.com/default"
+    static let api = "https://27a1jognpc.execute-api.us-west-2.amazonaws.com/default"
     
     static func todaysReading() -> Observable<DBR?> {
         return CompassService.reading(forDate: Date())

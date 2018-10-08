@@ -14,55 +14,59 @@ struct HttpService {
     
     private static func sendPost(_ endpoint: String, parameters: Parameters? = nil, headers: HTTPHeaders? = nil, encoding: ParameterEncoding = JSONEncoding.default) -> Observable<Result<Any>> {
         return Observable.create { (observer) -> Disposable in
-            let req = Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: encoding, headers: headers).responseJSON { response in
-                guard let res = response.response, response.result.isSuccess else {
-                    debugPrint(response)
-                    return observer.onError(DBRError(data: response.data, message: "Request failed"))
-                }
-                guard [200, 202].contains(res.statusCode) else {
-                    debugPrint(response)
-                    let error = String(describing: response.result.body())
-                    return observer.onError(DBRError(data: response.data, message: "Request failed: \(error)"))
-                }
-                guard let _ = response.result.value else {
-                    debugPrint(response)
-                    return observer.onError(DBRError(data: response.data, message: "Response is empty"))
-                }
-                observer.onNext(response.result)
-                observer.onCompleted()
+            var req: DataRequest? = nil
+            DispatchQueue.global(qos: .background).async {
+                req = Alamofire.request(endpoint, method: .post, parameters: parameters, encoding: encoding, headers: headers)
+                    .responseJSON(completionHandler: HttpService.createResponseHandler(for: observer))
             }
             return Disposables.create {
-                req.cancel()
+                req?.cancel()
             }
         }
-        
     }
     
     private static func sendGet(_ endpoint: String, parameters: Parameters? = nil, headers: HTTPHeaders? = nil) -> Observable<Result<Any>> {
         return Observable.create { (observer) -> Disposable in
-            let req = Alamofire.request(endpoint, method: .get, parameters: parameters, headers: headers).responseJSON { response in
-                guard let res = response.response, response.result.isSuccess else {
-                    debugPrint(response)
-                    return observer.onError(DBRError(data: response.data, message: "Request failed"))
+            var req: DataRequest? = nil
+            DispatchQueue.global(qos: .background).async {
+                req = Alamofire.request(endpoint, method: .get, parameters: parameters, headers: headers)
+                    .responseJSON(completionHandler: HttpService.createResponseHandler(for: observer))
+            }
+            return Disposables.create {
+                req?.cancel()
+            }
+        }
+    }
+    
+    private static func createResponseHandler(for observer: AnyObserver<Result<Any>>) -> (DataResponse<Any>) -> Void {
+        return { (response: DataResponse<Any>) in
+            guard let res = response.response, response.result.isSuccess else {
+                debugPrint(response)
+                DispatchQueue.main.async {
+                    observer.onError(DBRError(data: response.data, message: "Request failed"))
                 }
-                guard [200, 202].contains(res.statusCode) else {
-                    debugPrint(response)
-                    let error = String(describing: response.result.body())
-                    return observer.onError(DBRError(data: response.data, message: "Request failed: \(error)"))
+                return
+            }
+            guard [200, 202].contains(res.statusCode) else {
+                debugPrint(response)
+                let error = String(describing: response.result.body())
+                DispatchQueue.main.async {
+                    observer.onError(DBRError(data: response.data, message: "Request failed: \(error)"))
                 }
-                guard let _ = response.result.value else {
-                    debugPrint(response)
-                    return observer.onError(DBRError(data: response.data, message: "Response is empty"))
+                return
+            }
+            guard let _ = response.result.value else {
+                debugPrint(response)
+                DispatchQueue.main.async {
+                    observer.onError(DBRError(data: response.data, message: "Response is empty"))
                 }
+                return
+            }
+            DispatchQueue.main.async {
                 observer.onNext(response.result)
                 observer.onCompleted()
             }
-            return Disposables.create {
-                req.cancel()
-            }
-            
         }
-        
     }
 }
 

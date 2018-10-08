@@ -36,7 +36,7 @@ class ScriptureViewController: UIViewController {
         
         AppDelegate.global.store?.scriptureIndex.value += 1
         self.titleAddress.text = address
-        ESVService.getPassage(address!).subscribe(onNext: { passage in
+        ScriptureService.getPassage(address!).subscribe(onNext: { passage in
             guard let psg = passage else {
                 // TODO: Handle failure to get pasage text
                 return
