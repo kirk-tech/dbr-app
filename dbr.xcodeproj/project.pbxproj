@@ -41,6 +41,7 @@
 		FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB892169742600B4F6D7 /* Array+prepend.swift */; };
 		FCBC1A5A216097880062CFD5 /* ESVService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ESVService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ESVPassage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */; };
+		FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
 		FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3E215DE37C00C5FA7F /* Errors.swift */; };
 		FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */; };
@@ -102,6 +103,7 @@
 		FC8AEB892169742600B4F6D7 /* Array+prepend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+prepend.swift"; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ESVService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ESVPassage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ESVPassage.swift; sourceTree = "<group>"; };
+		FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+init.swift"; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
 		FCEFDD3E215DE37C00C5FA7F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+dictionary.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				FC8AEB872169740C00B4F6D7 /* Int+digits.swift */,
 				FC8AEB892169742600B4F6D7 /* Array+prepend.swift */,
 				FC61BA0C216AC278004B0060 /* Date+equality.swift */,
+				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				FC61BA0D216AC278004B0060 /* Date+equality.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
+				FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
 				FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */,
 				FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */,

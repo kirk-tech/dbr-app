@@ -89,13 +89,13 @@ extension ScriptureViewController: UITableViewDelegate, UITableViewDataSource {
         let scripture = self.passages[indexPath.row]
         
         let builder = ScriptureParser(for: scripture)
+        builder.applyAttributeToScripture(.paragraphStyle, value: NSMutableParagraphStyle(lineSpacing: 1.0, multiple: 1.3))
         builder.applyAttributeToVerseNumbers(.baselineOffset, value: 8)
         builder.applyAttributeToVerseNumbers(.font, value: UIFont(name: "OpenSans-Regular", size: 9)!)
         builder.applyAttributeToVerseNumbers(.foregroundColor, value: UIColor.lightGray)
         builder.applyAttributeToSectionTitles(.font, value: UIFont(name: "OpenSans-SemiBold", size: 15)!)
         
         cell.scriptureLabel.attributedText = builder.attributedScripture
-        // cell.scriptureLabel.setLineSpacing(2.0, multiple: 1)
         
         return cell
     }

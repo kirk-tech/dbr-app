@@ -53,6 +53,12 @@ class ScriptureParser {
             }
         }
         
+        for range in sectionTitleRanges {
+            let sectionTitle = String(self.scripture[range])
+            let updatedSectionTitle = sectionTitle.replacingOccurrences(of: "\\n\\n", with: " \n", options: .regularExpression)
+            self.scripture.replaceRange(range, with: updatedSectionTitle)
+        }
+        
         return sectionTitleRanges
     }
     
@@ -187,6 +193,9 @@ extension ScriptureParser {
         for range in self.sectionTitleIndicies {
             self.attributedScripture?.addAttribute(attributeName, value: value, range: NSRange(range, in: self.scripture))
         }
+    }
+    func applyAttributeToScripture(_ attributeName: NSMutableAttributedString.Key, value: Any) -> Void {
+        self.attributedScripture?.addAttribute(attributeName, value: value, range: NSRange(self.scripture.startIndex..<self.scripture.endIndex, in: self.scripture))
     }
 }
 

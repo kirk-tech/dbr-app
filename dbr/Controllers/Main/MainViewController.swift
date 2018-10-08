@@ -39,11 +39,11 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         
         menuBarController.view.translatesAutoresizingMaskIntoConstraints = false
         menuBarController.view.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        menuBarController.view.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        menuBarController.view.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         let menuWidthConstraint = menuBarController.view.widthAnchor.constraint(equalToConstant: UIConstants.menuWidth)
         menuWidthConstraint.priority = UILayoutPriority(999) // Makes annoying warning go away
         menuWidthConstraint.isActive = true
-        self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: UIConstants.menuWidth * -1)
+        self.menuViewLeadingAnchor = menuBarController.view.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 0) // UIConstants.menuWidth * -1)
         self.menuViewLeadingAnchor?.isActive = true
         
         dbrView = dbrController.view
@@ -68,7 +68,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         
         self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth
         self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth
-        self.menuViewLeadingAnchor?.constant = 0
+        // self.menuViewLeadingAnchor?.constant = 0
         
         animateMenuMove()
         
@@ -105,7 +105,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         // Move the dbr view over
         self.dbrViewLeadingAnchor?.constant = 0
         self.dbrViewTrailingAnchor?.constant = 0
-        self.menuViewLeadingAnchor?.constant = UIConstants.menuWidth * -1
+        // self.menuViewLeadingAnchor?.constant = UIConstants.menuWidth * -1
         
         animateMenuMove()
     }
