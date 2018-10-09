@@ -37,12 +37,26 @@ class MenuBarViewController: UIViewController {
     }
     
     func updateDateUI(_ date: Date) {
-        self.dateLabel.text = date.longMonthFormat()
+        self.dateLabel.attributedText = self.createAttributedDate(for: date)
         if date.isBefore(Date(), by: .day) {
             upArrow.isHidden = false
         } else {
             upArrow.isHidden = true
         }
+    }
+    
+    func createAttributedDate(for date: Date) -> NSAttributedString {
+        let dateString = date.longMonthFormat()
+        let attrString = NSMutableAttributedString(string: dateString)
+        
+        let daySuffixRange = NSRange(dateString.index(dateString.endIndex, offsetBy: -2)..<dateString.endIndex, in: dateString)
+        let fullRange = NSRange(dateString.startIndex..<dateString.endIndex, in: dateString)
+        
+        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 27)!, range: fullRange)
+        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 18)!, range: daySuffixRange)
+        attrString.addAttribute(.baselineOffset, value: 8, range: daySuffixRange)
+        
+        return attrString
     }
     
     @objc func moveDateUp() {
