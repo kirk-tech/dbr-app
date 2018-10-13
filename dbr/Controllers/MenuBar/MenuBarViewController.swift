@@ -15,8 +15,10 @@ import RxGesture
 class MenuBarViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var upArrow: UIImageView!
-    @IBOutlet weak var downArrow: UIImageView!
+    // @IBOutlet weak var upArrow: UIImageView!
+    // @IBOutlet weak var downArrow: UIImageView!
+    @IBOutlet weak var downArrow: UIView!
+    @IBOutlet weak var upArrow: UIView!
     
     let disposeBag = DisposeBag()
     

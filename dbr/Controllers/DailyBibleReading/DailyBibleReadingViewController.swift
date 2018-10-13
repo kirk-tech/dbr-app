@@ -8,6 +8,8 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
+import RxGesture
 
 class DailyBibleReadingViewController: UIViewController {
     
@@ -17,6 +19,7 @@ class DailyBibleReadingViewController: UIViewController {
     @IBOutlet weak var scrollViewLeadingConstraint: NSLayoutConstraint!
     @IBOutlet weak var pastorsNotes: UILabel!
     @IBOutlet weak var titleTable: UITableView!
+    @IBOutlet weak var dbrCircleIconImage: UIImageView!
     
     let disposeBag = DisposeBag()
     
@@ -27,8 +30,10 @@ class DailyBibleReadingViewController: UIViewController {
         
         AppDelegate.global.store?.date.change.subscribe(onNext: self.loadDBR).disposed(by: disposeBag)
         AppDelegate.global.store?.dbrIsLoading.change.subscribe(onNext: self.toggleLoadingView).disposed(by: disposeBag)
-
-        AppDelegate.global.store?.date.value = Date()
+        
+        self.dbrCircleIconImage.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
+            self.showNextScripture()
+        }).disposed(by: self.disposeBag)
         
         super.viewDidLoad()
     }
@@ -61,6 +66,10 @@ class DailyBibleReadingViewController: UIViewController {
     }
     
     @IBAction func didSwipeLeft(_ sender: Any) {
+        self.showNextScripture()
+    }
+    
+    func showNextScripture() -> Void {
         guard let scriptureViewController = UIViewController.initWithStoryboard(ScriptureViewController.self) else {
             return
         }
