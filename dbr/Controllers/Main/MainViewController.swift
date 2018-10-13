@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
+import RxGesture
 
 class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     
@@ -90,10 +92,22 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             else { self.hideMenu() }
         }.disposed(by: disposeBag)
         
+        let panGesture = menuBarController.view.rx.panGesture()
+        
+        panGesture.when(.ended)
+            .asTranslation()
+            .subscribe(onNext: self.onMenuBarPanEnd)
+            .disposed(by: self.disposeBag)
+        
+        panGesture.when(.changed)
+            .asTranslation()
+            .subscribe(onNext: self.onMenuBarPanChange)
+            .disposed(by: self.disposeBag)
+        
     }
     
     func showMenu() {
-                
+        
         self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth
         self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth
         // self.menuViewLeadingAnchor?.constant = 0
@@ -142,6 +156,43 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         UIViewPropertyAnimator(duration: 0.2, curve: .linear, animations: {
             self.view.layoutIfNeeded()
         }).startAnimation()
+    }
+    
+//    @objc func didSwipeOnView(_ sender: Any) {
+//        let xChange: CGFloat = panGesture!.getXAxisChange(self.view)
+//        guard xChange != 0 else { return }
+//        let currentMenuXPosition = self.view.frame.midX
+//        let halfWayMark = UIScreen.main.bounds.midX
+//        if currentMenuXPosition >= halfWayMark {
+//
+//        }
+//        print("CHANGED: \(xChange)")
+//        if panGesture!.state == .cancelled {
+//            print("FINAL")
+//        }
+//    }
+    
+    func onMenuBarPanChange(_ translation: CGPoint, _ velocity: CGPoint) -> Void {
+        print("...")
+        // Move the views to match the current translated position
+    }
+    
+    func onMenuBarPanEnd(_ translation: CGPoint, _ velocity: CGPoint) -> Void {
+        print("ENDED")
+        // Decide if the view is currenly closer to
+        // open or close and then snap it to that side
+    }
+    
+    func slideMenuToSetting() -> Void {
+        
+    }
+    
+    func slideMenuToDBR() -> Void {
+        
+    }
+    
+    func slideView(toX x: CGFloat) -> Void {
+        
     }
     
 }

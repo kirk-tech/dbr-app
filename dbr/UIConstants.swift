@@ -11,5 +11,6 @@ import UIKit
 
 class UIConstants {
     static let menuWidth: CGFloat = 80
-    static let primaryColor = UIColor.init(hex: "#4BC4C6")!
+    static let primaryColor = UIColor.init(hex: "#2BB9CA")!
+    static let secondaryColor = UIColor.init(hex: "#91DEEA")!
 }

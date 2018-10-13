@@ -41,9 +41,11 @@
 		FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB892169742600B4F6D7 /* Array+prepend.swift */; };
 		FCBC1A5A216097880062CFD5 /* ScriptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ScriptureService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ScriptureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */; };
+		FCD7E94621717C7F00E4BF72 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */; };
 		FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */; };
 		FCDE1281216B49B70060584F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE1280216B49B70060584F /* SettingsViewController.swift */; };
 		FCDE1283216B49C40060584F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE1282216B49C40060584F /* Settings.storyboard */; };
+		FCDE1285216EFB680060584F /* UIPanGestureRecognizer+direction.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */; };
 		FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3C215DE20C00C5FA7F /* DBR.swift */; };
 		FCEFDD3F215DE37C00C5FA7F /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD3E215DE37C00C5FA7F /* Errors.swift */; };
 		FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */; };
@@ -105,9 +107,11 @@
 		FC8AEB892169742600B4F6D7 /* Array+prepend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+prepend.swift"; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ScriptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureResponse.swift; sourceTree = "<group>"; };
+		FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+init.swift"; sourceTree = "<group>"; };
 		FCDE1280216B49B70060584F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FCDE1282216B49C40060584F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIPanGestureRecognizer+direction.swift"; sourceTree = "<group>"; };
 		FCEFDD3C215DE20C00C5FA7F /* DBR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBR.swift; sourceTree = "<group>"; };
 		FCEFDD3E215DE37C00C5FA7F /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+dictionary.swift"; sourceTree = "<group>"; };
@@ -270,6 +274,8 @@
 				FC8AEB892169742600B4F6D7 /* Array+prepend.swift */,
 				FC61BA0C216AC278004B0060 /* Date+equality.swift */,
 				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
+				FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */,
+				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -439,12 +445,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-dbr/Pods-dbr-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,6 +496,7 @@
 				FCEFDD46215DE4BE00C5FA7F /* Decodable+Init.swift in Sources */,
 				FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */,
 				FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */,
+				FCDE1285216EFB680060584F /* UIPanGestureRecognizer+direction.swift in Sources */,
 				FCEFED47216682EC003E4D92 /* UIColor+hex.swift in Sources */,
 				FC11DF88215DD998009E166B /* HttpService.swift in Sources */,
 				FC6E81BC2162C38F00522C5F /* ScriptureViewController.swift in Sources */,
@@ -496,6 +505,7 @@
 				FC7EF1DC21657210009FE58A /* String+Indexes.swift in Sources */,
 				FC5EF81A21640A7F00F00ABA /* MenuBarViewController.swift in Sources */,
 				FCBC1A5A216097880062CFD5 /* ScriptureService.swift in Sources */,
+				FCD7E94621717C7F00E4BF72 /* UIView+gradient.swift in Sources */,
 				FC8AEB882169740C00B4F6D7 /* Int+digits.swift in Sources */,
 				FCDE1281216B49B70060584F /* SettingsViewController.swift in Sources */,
 				FC25B1FD2161D6F000046A63 /* UILabel+lineSpacing.swift in Sources */,
@@ -669,14 +679,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STJ4CAJREG;
+				DEVELOPMENT_TEAM = AH772288HP;
 				INFOPLIST_FILE = dbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kirk.dbr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhe.kirk.dbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -689,14 +699,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = STJ4CAJREG;
+				DEVELOPMENT_TEAM = AH772288HP;
 				INFOPLIST_FILE = dbr/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kirk.dbr;
+				PRODUCT_BUNDLE_IDENTIFIER = com.rhe.kirk.dbr;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -21,7 +21,8 @@ class MenuBarViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        self.view.backgroundColor = UIConstants.primaryColor
+        self.view.addGradient([UIConstants.primaryColor.cgColor, UIConstants.secondaryColor.cgColor])
+        
         self.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
         
         AppDelegate.global.store!.date.change

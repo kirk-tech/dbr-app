@@ -47,6 +47,7 @@
                                         </constraints>
                                     </imageView>
                                 </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Tau-Fc-Fai" secondAttribute="bottom" constant="15" id="73m-4t-uMg"/>
                                     <constraint firstItem="Tau-Fc-Fai" firstAttribute="centerX" secondItem="e2q-SQ-kMu" secondAttribute="centerX" id="91O-cy-UoX"/>
