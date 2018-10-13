@@ -43,6 +43,7 @@
 		FCBC1A5C21613F460062CFD5 /* ScriptureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */; };
 		FCD7E94621717C7F00E4BF72 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */; };
 		FCD7E94A2172643600E4BF72 /* CAAffineTransform+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */; };
+		FCD7E94C217266BD00E4BF72 /* UIView+addDropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E94B217266BD00E4BF72 /* UIView+addDropShadow.swift */; };
 		FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */; };
 		FCDE1281216B49B70060584F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE1280216B49B70060584F /* SettingsViewController.swift */; };
 		FCDE1283216B49C40060584F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE1282216B49C40060584F /* Settings.storyboard */; };
@@ -110,6 +111,7 @@
 		FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureResponse.swift; sourceTree = "<group>"; };
 		FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
 		FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAffineTransform+init.swift"; sourceTree = "<group>"; };
+		FCD7E94B217266BD00E4BF72 /* UIView+addDropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+addDropShadow.swift"; sourceTree = "<group>"; };
 		FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+init.swift"; sourceTree = "<group>"; };
 		FCDE1280216B49B70060584F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FCDE1282216B49C40060584F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 				FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */,
 				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
 				FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */,
+				FCD7E94B217266BD00E4BF72 /* UIView+addDropShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
 				FCEFED4C21669321003E4D92 /* Observable+setDoneLoading.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
+				FCD7E94C217266BD00E4BF72 /* UIView+addDropShadow.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
 				FC7EF1D22164E169009FE58A /* Observable+cache.swift in Sources */,
 				FCF32B03216471B0004BDCBD /* UIViewController+initWithStoryboard.swift in Sources */,

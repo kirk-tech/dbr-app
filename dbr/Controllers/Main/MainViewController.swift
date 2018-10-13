@@ -53,6 +53,13 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.addSubview(dbrController.view)
         self.view.addSubview(settingsController.view)
         
+        //
+        // Place a cover over the staus bar section. This will clip our drop shadows from running into the status bar (visibly)
+        //
+        let statusBarView = UIView(frame: UIApplication.shared.statusBarFrame)
+        statusBarView.backgroundColor = .white
+        view.addSubview(statusBarView)
+        
         
         //
         //  Place the Menu Bar
@@ -73,13 +80,15 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         dbrView = dbrController.view
         dbrView?.translatesAutoresizingMaskIntoConstraints = false
         dbrView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
-        dbrView?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        dbrView?.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
         self.dbrViewLeadingAnchor = dbrView?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
         self.dbrViewTrailingAnchor = dbrView?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         self.dbrViewLeadingAnchor?.isActive = true
         self.dbrViewTrailingAnchor?.isActive = true
-        
-        
+        // Give the DBR view a drop shadow
+        dbrView?.addDropShadow(color: .black, opacity: 0.4, offSet: CGSize(width: -3, height: 0), radius: 4)
+
+
         //
         // Place the Settings view
         //
