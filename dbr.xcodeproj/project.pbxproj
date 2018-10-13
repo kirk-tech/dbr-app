@@ -42,6 +42,7 @@
 		FCBC1A5A216097880062CFD5 /* ScriptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ScriptureService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ScriptureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */; };
 		FCD7E94621717C7F00E4BF72 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */; };
+		FCD7E94A2172643600E4BF72 /* CAAffineTransform+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */; };
 		FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */; };
 		FCDE1281216B49B70060584F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDE1280216B49B70060584F /* SettingsViewController.swift */; };
 		FCDE1283216B49C40060584F /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCDE1282216B49C40060584F /* Settings.storyboard */; };
@@ -108,6 +109,7 @@
 		FCBC1A59216097880062CFD5 /* ScriptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureResponse.swift; sourceTree = "<group>"; };
 		FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
+		FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAAffineTransform+init.swift"; sourceTree = "<group>"; };
 		FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableParagraphStyle+init.swift"; sourceTree = "<group>"; };
 		FCDE1280216B49B70060584F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		FCDE1282216B49C40060584F /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
 				FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */,
 				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
+				FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -486,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC7EF1D82165392B009FE58A /* Store.swift in Sources */,
+				FCD7E94A2172643600E4BF72 /* CAAffineTransform+init.swift in Sources */,
 				FC7EF1DA21656307009FE58A /* UIConstants.swift in Sources */,
 				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
 				FCEFED4C21669321003E4D92 /* Observable+setDoneLoading.swift in Sources */,

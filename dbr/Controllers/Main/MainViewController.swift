@@ -122,6 +122,45 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
                 .disposed(by: self.disposeBag)
         }
         
+        let cornerRadius: CGFloat = 10
+        let cornerImage = UIImage(named: "blacked_out_corner.png")!
+        
+        let topLeftCorner = UIImageView(image: cornerImage)
+        self.view.addSubview(topLeftCorner)
+        topLeftCorner.translatesAutoresizingMaskIntoConstraints = false
+        topLeftCorner.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        topLeftCorner.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        topLeftCorner.widthAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        topLeftCorner.heightAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        
+        let topRightCorner = UIImageView(image: cornerImage)
+        topRightCorner.transform = CGAffineTransform(rotationDegrees: 90)
+        self.view.addSubview(topRightCorner)
+        topRightCorner.translatesAutoresizingMaskIntoConstraints = false
+        topRightCorner.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        topRightCorner.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        topRightCorner.widthAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        topRightCorner.heightAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        
+        let bottomLeftCorner = UIImageView(image: cornerImage)
+        bottomLeftCorner.transform = CGAffineTransform(rotationDegrees: -90)
+        self.view.addSubview(bottomLeftCorner)
+        bottomLeftCorner.translatesAutoresizingMaskIntoConstraints = false
+        bottomLeftCorner.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        bottomLeftCorner.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        bottomLeftCorner.widthAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        bottomLeftCorner.heightAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        
+        let bottomRightCorner = UIImageView(image: cornerImage)
+        bottomRightCorner.transform = CGAffineTransform(rotationDegrees: -180)
+        self.view.addSubview(bottomRightCorner)
+        bottomRightCorner.translatesAutoresizingMaskIntoConstraints = false
+        bottomRightCorner.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        bottomRightCorner.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+        bottomRightCorner.widthAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        bottomRightCorner.heightAnchor.constraint(equalToConstant: cornerRadius).isActive = true
+        
+        
     }
     
     func showMenu() {
