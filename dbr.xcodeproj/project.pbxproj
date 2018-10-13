@@ -242,6 +242,32 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FCD7E94D21726CF700E4BF72 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */,
+				FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */,
+				FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */,
+				FCEFED46216682EC003E4D92 /* UIColor+hex.swift */,
+				FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */,
+				FCD7E94B217266BD00E4BF72 /* UIView+addDropShadow.swift */,
+				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
+				FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */,
+				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
+		FCD7E94E21726D1700E4BF72 /* Rx */ = {
+			isa = PBXGroup;
+			children = (
+				FCEFED4B21669321003E4D92 /* Observable+setDoneLoading.swift */,
+				FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */,
+				FC7EF1D12164E169009FE58A /* Observable+cache.swift */,
+			);
+			name = Rx;
+			sourceTree = "<group>";
+		};
 		FCDE127F216B49A40060584F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
@@ -263,25 +289,15 @@
 		FCEFDD42215DE48200C5FA7F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FCD7E94E21726D1700E4BF72 /* Rx */,
+				FCD7E94D21726CF700E4BF72 /* UIKit */,
 				FCEFDD40215DE44C00C5FA7F /* Encodable+dictionary.swift */,
-				FCEFDD43215DE4AA00C5FA7F /* Observable+Map.swift */,
 				FCEFDD45215DE4BE00C5FA7F /* Decodable+Init.swift */,
-				FC25B1FC2161D6F000046A63 /* UILabel+lineSpacing.swift */,
-				FC25B2032162801600046A63 /* UILabel+optimalHeight.swift */,
-				FCF32B02216471B0004BDCBD /* UIViewController+initWithStoryboard.swift */,
-				FC7EF1D12164E169009FE58A /* Observable+cache.swift */,
 				FC7EF1D32164EA0B009FE58A /* Date+format.swift */,
 				FC7EF1DB21657210009FE58A /* String+Indexes.swift */,
-				FCEFED46216682EC003E4D92 /* UIColor+hex.swift */,
-				FCEFED4B21669321003E4D92 /* Observable+setDoneLoading.swift */,
 				FC8AEB872169740C00B4F6D7 /* Int+digits.swift */,
 				FC8AEB892169742600B4F6D7 /* Array+prepend.swift */,
 				FC61BA0C216AC278004B0060 /* Date+equality.swift */,
-				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
-				FCDE1284216EFB680060584F /* UIPanGestureRecognizer+direction.swift */,
-				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
-				FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */,
-				FCD7E94B217266BD00E4BF72 /* UIView+addDropShadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
