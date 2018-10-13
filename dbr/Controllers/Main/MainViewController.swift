@@ -21,7 +21,13 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     var dbrViewTrailingAnchor: NSLayoutConstraint?
     var menuViewLeadingAnchor: NSLayoutConstraint?
     var settingsViewLeadingAnchor: NSLayoutConstraint?
-    var settingsViewTrailingAnchor: NSLayoutConstraint?
+    
+    // TODO: Add to state store
+    var settingsAreVisible = false
+    
+    var settingsViewWidth: CGFloat {
+        return self.view.frame.maxX - UIConstants.menuWidth
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,10 +84,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         settingsView?.translatesAutoresizingMaskIntoConstraints = false
         settingsView?.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
         settingsView?.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+        settingsView?.widthAnchor.constraint(equalToConstant: self.view.frame.maxX - UIConstants.menuWidth).isActive = true
         self.settingsViewLeadingAnchor = settingsView?.leadingAnchor.constraint(equalTo: self.view.leadingAnchor)
-        self.settingsViewTrailingAnchor = settingsView?.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
+        self.settingsViewLeadingAnchor?.constant = self.settingsViewWidth * -1
+        self.settingsViewLeadingAnchor?.isActive = true
         
-        settingsView?.backgroundColor = .green
+        settingsController.view.backgroundColor = .green
         
         
         //
@@ -101,6 +109,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         
         panGesture.when(.changed)
             .asTranslation()
+            .map { self.settingsAreVisible ? (UIScreen.main.bounds.maxX - UIConstants.menuWidth) + $0.translation.x : $0.translation.x }
+            // .distinctUntilChanged { $0.velocity.x } // TODO: Not working :(
+            // .buffer(timeSpan: 0.1, count: 100, scheduler: MainScheduler.instance)
+            // .map { move in move.map { $0.translation.x }.reduce(0, +) }
             .subscribe(onNext: self.onMenuBarPanChange)
             .disposed(by: self.disposeBag)
         
@@ -113,6 +125,13 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         // self.menuViewLeadingAnchor?.constant = 0
         
         animateMenuMove()
+        
+        self.addSwipeableViewOverDBR()
+        
+    }
+    
+    func addSwipeableViewOverDBR() -> Void {
+        guard self.view.viewWithTag(2932) == nil else { return }
         
         // Create a view and add it over the top of
         // the area where the dbr view is now sitting
@@ -133,7 +152,12 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         gestureRecognizer.direction = .left
         gestureRecognizer.delegate = self
         coverView.addGestureRecognizer(gestureRecognizer)
-        
+    }
+    
+    func removeSwipeableViewFromDBR() -> Void {
+        if let coverView = self.view.viewWithTag(2932) {
+            coverView.removeFromSuperview()
+        }
     }
     
     @objc func handleCloseSwipe(gestureRecognizer: UIGestureRecognizer) {
@@ -141,9 +165,7 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func hideMenu() {
-        if let coverView = self.view.viewWithTag(2932) {
-            coverView.removeFromSuperview()
-        }
+        self.removeSwipeableViewFromDBR()
         // Move the dbr view over
         self.dbrViewLeadingAnchor?.constant = 0
         self.dbrViewTrailingAnchor?.constant = 0
@@ -153,46 +175,80 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func animateMenuMove() {
-        UIViewPropertyAnimator(duration: 0.2, curve: .linear, animations: {
+        UIViewPropertyAnimator(duration: 0.1, curve: .easeOut, animations: {
             self.view.layoutIfNeeded()
         }).startAnimation()
     }
     
-//    @objc func didSwipeOnView(_ sender: Any) {
-//        let xChange: CGFloat = panGesture!.getXAxisChange(self.view)
-//        guard xChange != 0 else { return }
-//        let currentMenuXPosition = self.view.frame.midX
-//        let halfWayMark = UIScreen.main.bounds.midX
-//        if currentMenuXPosition >= halfWayMark {
-//
-//        }
-//        print("CHANGED: \(xChange)")
-//        if panGesture!.state == .cancelled {
-//            print("FINAL")
-//        }
-//    }
-    
-    func onMenuBarPanChange(_ translation: CGPoint, _ velocity: CGPoint) -> Void {
-        print("...")
-        // Move the views to match the current translated position
+    func onMenuBarPanChange(_ x: CGFloat) -> Void {
+        let newMenuX = self.view.frame.minX + x
+        guard newMenuX != 0.0 else { return }
+        self.slideView(toX: newMenuX)
     }
     
     func onMenuBarPanEnd(_ translation: CGPoint, _ velocity: CGPoint) -> Void {
-        print("ENDED")
         // Decide if the view is currenly closer to
         // open or close and then snap it to that side
+        let leadingMenuX = self.menuViewLeadingAnchor?.constant ?? 0
+        let currentMenuXPosition = leadingMenuX + (UIConstants.menuWidth / 2)
+        let halfWayMark = UIScreen.main.bounds.midX
+        
+        if currentMenuXPosition >= halfWayMark {
+            self.slideMenuToSetting()
+        } else {
+            self.slideMenuToDBR()
+        }
     }
     
     func slideMenuToSetting() -> Void {
+
+        self.removeSwipeableViewFromDBR()
         
+        // Move the menu bar
+        self.menuViewLeadingAnchor?.constant = UIScreen.main.bounds.maxX - UIConstants.menuWidth
+        
+        // Move the dbr view
+        self.dbrViewLeadingAnchor?.constant = UIScreen.main.bounds.maxX
+        self.dbrViewTrailingAnchor?.constant = UIScreen.main.bounds.maxX + (UIScreen.main.bounds.maxX - UIConstants.menuWidth)
+        
+        // Move the settings
+        self.settingsViewLeadingAnchor?.constant = 0
+        
+        self.settingsAreVisible = true
+        
+        self.animateMenuMove()
     }
     
     func slideMenuToDBR() -> Void {
+
+        self.addSwipeableViewOverDBR()
         
+        // Move the menu bar
+        self.menuViewLeadingAnchor?.constant = 0
+        
+        // Move the dbr view
+        self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth
+        self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth
+        
+        // Move the settings
+        self.settingsViewLeadingAnchor?.constant = self.settingsViewWidth * -1
+        
+        self.settingsAreVisible = false
+        
+        self.animateMenuMove()
     }
     
     func slideView(toX x: CGFloat) -> Void {
         
+        // Move the menu bar
+        self.menuViewLeadingAnchor?.constant = x
+        
+        // Move the dbr view
+        self.dbrViewLeadingAnchor?.constant = UIConstants.menuWidth + x
+        self.dbrViewTrailingAnchor?.constant = UIConstants.menuWidth + x
+        
+        // Move the settings
+        self.settingsViewLeadingAnchor?.constant = (self.settingsViewWidth * -1) + x
     }
     
 }
