@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxGesture
 
 
 class MenuBarViewController: UIViewController {
@@ -29,21 +30,42 @@ class MenuBarViewController: UIViewController {
             .subscribe(onNext: self.updateDateUI)
             .disposed(by: disposeBag)
         
-        let downTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moveDateDown))
-        downArrow.addGestureRecognizer(downTapGestureRecognizer)
+        let upSwipe = self.view.rx.swipeGesture(.up)
+        let downSwipe = self.view.rx.swipeGesture(.down)
+        let upTap = self.upArrow.rx.tapGesture()
+        let downTap = self.downArrow.rx.tapGesture()
         
-        let upTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(moveDateUp))
-        upArrow.addGestureRecognizer(upTapGestureRecognizer)
+        upSwipe.subscribe(onNext: { _ in
+            self.moveDateBack()
+        }).disposed(by: self.disposeBag)
+    
+        downSwipe.subscribe(onNext: { _ in
+            self.moveDateForward()
+        }).disposed(by: self.disposeBag)
         
+        upTap.subscribe(onNext: { _ in
+            self.moveDateForward()
+        }).disposed(by: self.disposeBag)
+        
+        downTap.subscribe(onNext: { _ in
+            self.moveDateBack()
+        }).disposed(by: self.disposeBag)
+        
+    }
+    
+    func canMoveDateForward() -> Bool {
+        return AppDelegate.global.store!.date.value.isBefore(Date(), by: .day)
+    }
+    
+    func canMoveDateBack() -> Bool {
+        let oneMonth: Double = 86400 * 30
+        return AppDelegate.global.store!.date.value.isAfter(Date().addingTimeInterval(oneMonth * -1.0), by: .day)
     }
     
     func updateDateUI(_ date: Date) {
         self.dateLabel.attributedText = self.createAttributedDate(for: date)
-        if date.isBefore(Date(), by: .day) {
-            upArrow.isHidden = false
-        } else {
-            upArrow.isHidden = true
-        }
+        upArrow.isHidden = !canMoveDateForward()
+        downArrow.isHidden = !canMoveDateBack()
     }
     
     func createAttributedDate(for date: Date) -> NSAttributedString {
@@ -60,11 +82,13 @@ class MenuBarViewController: UIViewController {
         return attrString
     }
     
-    @objc func moveDateUp() {
+    func moveDateForward() {
+        guard canMoveDateForward() else { return }
         AppDelegate.global.store!.date.value = AppDelegate.global.store!.date.value.addingTimeInterval(86400)
     }
     
-    @objc func moveDateDown() {
+    func moveDateBack() {
+        guard canMoveDateBack() else { return }
         AppDelegate.global.store!.date.value = AppDelegate.global.store!.date.value.addingTimeInterval(-86400)
     }
     

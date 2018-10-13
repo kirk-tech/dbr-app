@@ -12,4 +12,7 @@ extension Date {
     func isBefore(_ date: Date, by granularity: Calendar.Component) -> Bool  {
         return Calendar.current.compare(self, to: date, toGranularity: granularity).rawValue < 0
     }
+    func isAfter(_ date: Date, by granularity: Calendar.Component) -> Bool {
+        return Calendar.current.compare(self, to: date, toGranularity: granularity).rawValue > 0
+    }
 }

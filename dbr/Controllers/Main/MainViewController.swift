@@ -25,6 +25,9 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
     // TODO: Add to state store
     var settingsAreVisible = false
     
+    // DEV
+    let DISABLE_SETTINGS_SCROLL = true
+    
     var settingsViewWidth: CGFloat {
         return self.view.frame.maxX - UIConstants.menuWidth
     }
@@ -100,21 +103,24 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
             else { self.hideMenu() }
         }.disposed(by: disposeBag)
         
-        let panGesture = menuBarController.view.rx.panGesture()
-        
-        panGesture.when(.ended)
-            .asTranslation()
-            .subscribe(onNext: self.onMenuBarPanEnd)
-            .disposed(by: self.disposeBag)
-        
-        panGesture.when(.changed)
-            .asTranslation()
-            .map { self.settingsAreVisible ? (UIScreen.main.bounds.maxX - UIConstants.menuWidth) + $0.translation.x : $0.translation.x }
-            // .distinctUntilChanged { $0.velocity.x } // TODO: Not working :(
-            // .buffer(timeSpan: 0.1, count: 100, scheduler: MainScheduler.instance)
-            // .map { move in move.map { $0.translation.x }.reduce(0, +) }
-            .subscribe(onNext: self.onMenuBarPanChange)
-            .disposed(by: self.disposeBag)
+        if !DISABLE_SETTINGS_SCROLL {
+            
+            let panGesture = menuBarController.view.rx.panGesture()
+            
+            panGesture.when(.ended)
+                .asTranslation()
+                .subscribe(onNext: self.onMenuBarPanEnd)
+                .disposed(by: self.disposeBag)
+            
+            panGesture.when(.changed)
+                .asTranslation()
+                .map { self.settingsAreVisible ? (UIScreen.main.bounds.maxX - UIConstants.menuWidth) + $0.translation.x : $0.translation.x }
+                // .distinctUntilChanged { $0.velocity.x } // TODO: Not working :(
+                // .buffer(timeSpan: 0.1, count: 100, scheduler: MainScheduler.instance)
+                // .map { move in move.map { $0.translation.x }.reduce(0, +) }
+                .subscribe(onNext: self.onMenuBarPanChange)
+                .disposed(by: self.disposeBag)
+        }
         
     }
     
