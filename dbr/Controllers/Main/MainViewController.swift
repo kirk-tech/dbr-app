@@ -32,6 +32,10 @@ class MainViewController: UIViewController, UIGestureRecognizerDelegate {
         return self.view.frame.maxX - UIConstants.menuWidth
     }
     
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
