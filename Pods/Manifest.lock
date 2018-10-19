@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.7.3)
+  - DataCompression (3.0.0)
   - RxCocoa (4.3.1):
     - RxSwift (~> 4.0)
   - RxGesture (2.0.1):
@@ -9,6 +10,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.7)
+  - DataCompression (~> 3.0)
   - RxCocoa (~> 4.3)
   - RxGesture (~> 2.0)
   - RxSwift (~> 4.3)
@@ -16,16 +18,18 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - DataCompression
     - RxCocoa
     - RxGesture
     - RxSwift
 
 SPEC CHECKSUMS:
   Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  DataCompression: 4df426340ccbf53851df71dd652bd80d0ea47eb7
   RxCocoa: 78763c7b07d02455598d9fc3c1ad091a28b73635
   RxGesture: 26ede4ed13ffc6336d29dbd9a8dff229bdb72de7
   RxSwift: fe0fd770a43acdb7d0a53da411c9b892e69bb6e4
 
-PODFILE CHECKSUM: 8b4ba659a2ec3ff80b304ab22f71de640397af32
+PODFILE CHECKSUM: b83797f195e26bbbc137391d9d2817daa943410a
 
 COCOAPODS: 1.5.3

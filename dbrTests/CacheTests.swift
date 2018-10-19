@@ -7,23 +7,32 @@
 //
 
 import XCTest
+import Foundation
 @testable import dbr
 
-class dbrTests: XCTestCase {
+class CacheTests: XCTestCase {
+    
+    struct TestableItem: Codable {
+        let name: String
+    }
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCache() {
+        let sut = CacheService()
+        
+        sut.persist(TestableItem(name: "YOLO"), key: "testable")
+        
+        guard let item: TestableItem = sut.retrieve("testable") else { return XCTFail("Failed to retrieve data") }
+        
+        XCTAssert(item.name == "YOLO", "Failed to get the correctly named item from cache")
+        
     }
     
     func testPerformanceExample() {

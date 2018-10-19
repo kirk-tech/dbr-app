@@ -6,4 +6,5 @@ target 'dbr' do
   pod 'RxCocoa', '~> 4.3'
   pod 'Alamofire', '~> 4.7'
   pod 'RxGesture', '~> 2.0'
+  pod 'DataCompression', '~> 3.0'
 end

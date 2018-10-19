@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import DataCompression
 
 
 struct CacheService {
@@ -20,9 +21,9 @@ struct CacheService {
         }
     }
     
-    struct CacheModel<T: Codable>: Codable {
+    struct CacheModel: Codable {
         let ttd: Double
-        let payload: T
+        let payload: Data
         func isStale() -> Bool {
             let rightNow = Date().timeIntervalSince1970
             return self.ttd < rightNow
@@ -34,10 +35,8 @@ struct CacheService {
         let documentFolder = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
         self.destination = URL(fileURLWithPath: documentFolder).appendingPathComponent("dbr_cahce", isDirectory: true)
         
-        let fileManager = FileManager.default
-        
         do {
-            try fileManager.createDirectory(at: destination, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(at: destination, withIntermediateDirectories: true, attributes: nil)
         }
         catch {
             fatalError("Unable to create cache directory: \(error)")
@@ -47,7 +46,13 @@ struct CacheService {
     func persist<T: Codable>(_ data: T, key: String, ttl: Int = 86400) -> Void {
         let url = destination.appendingPathComponent(key, isDirectory: false)
         let ttd = Date().timeIntervalSince1970 + Double(ttl)
-        let model = CacheModel(ttd: ttd, payload: data)
+        
+        guard
+            let jsonData = try? JSONEncoder().encode(data),
+            let compressedJsonData = jsonData.deflate()
+        else { return }
+        
+        let model = CacheModel(ttd: ttd, payload: compressedJsonData)
         
         let operation = BlockOperation {
             do {
@@ -61,17 +66,20 @@ struct CacheService {
     }
     
     func retrieve<T: Codable>(_ key: String) -> T? {
+        let url = destination.appendingPathComponent(key, isDirectory: false)
         guard
-            let data = try? Data(contentsOf: destination.appendingPathComponent(key, isDirectory: false)),
-            let model = try? JSONDecoder().decode(CacheModel<T>.self, from: data)
-            else { return nil }
+            let data = try? Data(contentsOf: url),
+            let model = try? JSONDecoder().decode(CacheModel.self, from: data)
+        else { return nil }
 
         guard !model.isStale() else {
-            // TODO: Remove from cache
+            try? FileManager.default.removeItem(at: url)
             return nil
         }
+        
+        guard let decompressedData = model.payload.inflate() else { return nil }
 
-        return model.payload
+        return try? JSONDecoder().decode(T.self, from: decompressedData)
     }
     
 }

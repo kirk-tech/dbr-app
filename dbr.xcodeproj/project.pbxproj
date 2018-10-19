@@ -17,7 +17,7 @@
 		FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */; };
 		FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF69215DD5E9009E166B /* Assets.xcassets */; };
 		FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */; };
-		FC11DF78215DD5E9009E166B /* dbrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF77215DD5E9009E166B /* dbrTests.swift */; };
+		FC11DF78215DD5E9009E166B /* CacheTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF77215DD5E9009E166B /* CacheTests.swift */; };
 		FC11DF85215DD92C009E166B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF83215DD92C009E166B /* README.md */; };
 		FC11DF88215DD998009E166B /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF87215DD998009E166B /* HttpService.swift */; };
 		FC11DF8A215DD9A1009E166B /* CompassService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF89215DD9A1009E166B /* CompassService.swift */; };
@@ -88,7 +88,7 @@
 		FC11DF6C215DD5E9009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC11DF6E215DD5E9009E166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC11DF73215DD5E9009E166B /* dbrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dbrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC11DF77215DD5E9009E166B /* dbrTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dbrTests.swift; sourceTree = "<group>"; };
+		FC11DF77215DD5E9009E166B /* CacheTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTests.swift; sourceTree = "<group>"; };
 		FC11DF79215DD5E9009E166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC11DF83215DD92C009E166B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC11DF87215DD998009E166B /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
@@ -214,7 +214,7 @@
 		FC11DF76215DD5E9009E166B /* dbrTests */ = {
 			isa = PBXGroup;
 			children = (
-				FC11DF77215DD5E9009E166B /* dbrTests.swift */,
+				FC11DF77215DD5E9009E166B /* CacheTests.swift */,
 				FC11DF79215DD5E9009E166B /* Info.plist */,
 			);
 			path = dbrTests;
@@ -478,6 +478,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-dbr/Pods-dbr-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DataCompression/DataCompression.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -485,6 +486,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DataCompression.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -565,7 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC11DF78215DD5E9009E166B /* dbrTests.swift in Sources */,
+				FC11DF78215DD5E9009E166B /* CacheTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
