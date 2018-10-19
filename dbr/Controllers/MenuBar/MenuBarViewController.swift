@@ -93,12 +93,10 @@ extension MenuBarViewController: MenuBarResponderArrowDelegate {
     
     func setUpArrow(hidden: Bool) {
         self.upArrow.isHidden = hidden
-        print("upArrow.isHidden: \(hidden)")
     }
     
     func setDownArrow(hidden: Bool) {
         self.downArrow.isHidden = hidden
-        print("downArrow.isHidden: \(hidden)")
     }
     
 }

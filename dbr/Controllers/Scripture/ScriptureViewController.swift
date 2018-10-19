@@ -15,6 +15,7 @@ class ScriptureViewController: UIViewController {
     @IBOutlet weak var passageTableHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var titleAddress: UILabel!
     @IBOutlet weak var passageTable: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     let disposeBag = DisposeBag()
     var passages = [String]()
@@ -46,8 +47,9 @@ class ScriptureViewController: UIViewController {
             // HACK: Table not laying out correctly
             // so here we force it to layout right away
             // and then forcefully set the height
-            self.passageTable.layoutIfNeeded()
-            self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
+             self.passageTable.layoutIfNeeded()
+             self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
+             self.scrollView.setContentOffset(.zero, animated: false)
             
         }).disposed(by: disposeBag)
     }

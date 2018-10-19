@@ -57,11 +57,10 @@ extension ScriptureMenuBarResponder {
         label.text = verse
         guard let i = AppDelegate.global.store!.dbr.value?.verses.firstIndex(of: verse) else { return }
         self.index = i
-        print("i: \(i)")
 
         // Update Arrows
         let canMoveBackwards = index > 0
-        let canMoveForwards = index < (AppDelegate.global.store!.dbr.value?.verses.count ?? 0)
+        let canMoveForwards = index < ((AppDelegate.global.store!.dbr.value?.verses.count ?? 0) - 1)
         self.delegate.setDownArrow(hidden: !canMoveForwards)
         self.delegate.setUpArrow(hidden: !canMoveBackwards)
     }

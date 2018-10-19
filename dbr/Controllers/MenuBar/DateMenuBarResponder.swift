@@ -66,8 +66,8 @@ extension DateMenuBarResponder {
         let daySuffixRange = NSRange(dateString.index(dateString.endIndex, offsetBy: -2)..<dateString.endIndex, in: dateString)
         let fullRange = NSRange(dateString.startIndex..<dateString.endIndex, in: dateString)
         
-        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 27)!, range: fullRange)
-        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 18)!, range: daySuffixRange)
+        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 24)!, range: fullRange)
+        attrString.addAttribute(.font, value: UIFont(name: "HeadlandOne-Regular", size: 17)!, range: daySuffixRange)
         attrString.addAttribute(.baselineOffset, value: 8, range: daySuffixRange)
         
         return attrString
