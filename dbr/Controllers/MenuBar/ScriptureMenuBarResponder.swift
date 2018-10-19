@@ -30,19 +30,20 @@ class ScriptureMenuBarResponder: MenuBarResponder {
     }
     
     func tapUp() {
-        showNextPassageLabel()
+        showPreviousPassageLabel()
     }
     
     func tapDown() {
-        showPreviousPassageLabel()
+        showNextPassageLabel()
     }
     
     func swipeUp() {
-        showPreviousPassageLabel()
+        showNextPassageLabel()
+        
     }
     
     func swipeDown() {
-        showNextPassageLabel()
+        showPreviousPassageLabel()
     }
     
 }
@@ -61,8 +62,8 @@ extension ScriptureMenuBarResponder {
         // Update Arrows
         let canMoveBackwards = index > 0
         let canMoveForwards = index < (AppDelegate.global.store!.dbr.value?.verses.count ?? 0)
-        self.delegate.setDownArrow(hidden: !canMoveBackwards)
-        self.delegate.setUpArrow(hidden: !canMoveForwards)
+        self.delegate.setDownArrow(hidden: !canMoveForwards)
+        self.delegate.setUpArrow(hidden: !canMoveBackwards)
     }
     
     func showNextPassageLabel() {

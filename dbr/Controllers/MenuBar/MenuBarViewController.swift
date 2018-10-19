@@ -30,6 +30,7 @@ class MenuBarViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var downArrow: UIView!
     @IBOutlet weak var upArrow: UIView!
+    @IBOutlet weak var grab: UIImageView!
     
     let disposeBag = DisposeBag()
     
@@ -38,9 +39,10 @@ class MenuBarViewController: UIViewController {
     override func viewDidLoad() {
         
         self.view.addGradient([UIConstants.primaryColor.cgColor, UIConstants.secondaryColor.cgColor])
+        self.grab.transform = CGAffineTransform(rotationDegrees: 90)
         
-        self.dateLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
-        self.scriptureLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 2)
+        self.dateLabel.transform = CGAffineTransform(rotationDegrees: -90)
+        self.scriptureLabel.transform = CGAffineTransform(rotationDegrees: -90)
         
         let upSwipe = self.view.rx.swipeGesture(.up)
         let downSwipe = self.view.rx.swipeGesture(.down)
