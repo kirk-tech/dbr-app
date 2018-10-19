@@ -43,6 +43,7 @@
 		FC86F5142166A3AC00F41CFF /* ScriptureParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC86F5132166A3AC00F41CFF /* ScriptureParser.swift */; };
 		FC8AEB882169740C00B4F6D7 /* Int+digits.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB872169740C00B4F6D7 /* Int+digits.swift */; };
 		FC8AEB8A2169742600B4F6D7 /* Array+prepend.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8AEB892169742600B4F6D7 /* Array+prepend.swift */; };
+		FC98CA37217A4CED006C4EE8 /* privacy-policy.md in Resources */ = {isa = PBXBuildFile; fileRef = FC98CA36217A4CED006C4EE8 /* privacy-policy.md */; };
 		FCBC1A5A216097880062CFD5 /* ScriptureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A59216097880062CFD5 /* ScriptureService.swift */; };
 		FCBC1A5C21613F460062CFD5 /* ScriptureResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */; };
 		FCD7E94621717C7F00E4BF72 /* UIView+gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */; };
@@ -115,6 +116,7 @@
 		FC86F5132166A3AC00F41CFF /* ScriptureParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureParser.swift; sourceTree = "<group>"; };
 		FC8AEB872169740C00B4F6D7 /* Int+digits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+digits.swift"; sourceTree = "<group>"; };
 		FC8AEB892169742600B4F6D7 /* Array+prepend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+prepend.swift"; sourceTree = "<group>"; };
+		FC98CA36217A4CED006C4EE8 /* privacy-policy.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = "privacy-policy.md"; sourceTree = "<group>"; };
 		FCBC1A59216097880062CFD5 /* ScriptureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureService.swift; sourceTree = "<group>"; };
 		FCBC1A5B21613F460062CFD5 /* ScriptureResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureResponse.swift; sourceTree = "<group>"; };
 		FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+gradient.swift"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 		FC11DF56215DD5E7009E166B = {
 			isa = PBXGroup;
 			children = (
+				FC98CA36217A4CED006C4EE8 /* privacy-policy.md */,
 				FC11DF83215DD92C009E166B /* README.md */,
 				FC11DF61215DD5E7009E166B /* dbr */,
 				FC11DF76215DD5E9009E166B /* dbrTests */,
@@ -455,6 +458,7 @@
 				FC25B2012161F14800046A63 /* HeadlandOne-Regular.ttf in Resources */,
 				FC5EF81E21640FD700F00ABA /* DailyBibleReading.storyboard in Resources */,
 				FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */,
+				FC98CA37217A4CED006C4EE8 /* privacy-policy.md in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */,
 			);
