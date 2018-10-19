@@ -83,10 +83,6 @@
                                             <constraint firstAttribute="trailing" secondItem="If2-EU-FVT" secondAttribute="trailing" constant="20" id="c3I-5L-An5"/>
                                             <constraint firstItem="tGa-NL-1Dj" firstAttribute="leading" secondItem="Owx-mx-Tco" secondAttribute="leading" constant="20" id="vyd-lA-JcY"/>
                                         </constraints>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="F83-cs-OI7" appends="YES" id="QAh-VD-Oit"/>
-                                            <outletCollection property="gestureRecognizers" destination="Slu-lG-fOv" appends="YES" id="dsN-u9-Q1c"/>
-                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -114,16 +110,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9GI-AV-XhN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="left" id="F83-cs-OI7" userLabel="Swipe LEFT Gesture Recognizer">
-                    <connections>
-                        <action selector="didSwipeLeft:" destination="lz8-QR-DfA" id="g2y-ug-2R1"/>
-                    </connections>
-                </swipeGestureRecognizer>
-                <swipeGestureRecognizer direction="right" id="Slu-lG-fOv" userLabel="Swipe RIGHT Gesture Recognizer">
-                    <connections>
-                        <action selector="didSwipeRight:" destination="lz8-QR-DfA" id="gmo-DI-dL5"/>
-                    </connections>
-                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-204" y="17.541229385307346"/>
         </scene>

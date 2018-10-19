@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 class UIConstants {
-    static let menuWidth: CGFloat = 60
+    static let menuWidth: CGFloat = 50
+    static let slideOverViewOffset: CGFloat = 50
     static let primaryColor = UIColor.init(hex: "#2BB9CA")!
     static let secondaryColor = UIColor.init(hex: "#91DEEA")!
 }

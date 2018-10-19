@@ -60,8 +60,14 @@
                                             <constraint firstItem="Tau-Fc-Fai" firstAttribute="centerX" secondItem="oWO-Id-hpu" secondAttribute="centerX" id="gKC-J7-zkB"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-zZ-Oog">
-                                        <rect key="frame" x="8" y="374" width="359" height="50"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rAl-zZ-Oog">
+                                        <rect key="frame" x="149.5" y="383" width="76.5" height="34"/>
+                                        <fontDescription key="fontDescription" name="HeadlandOne-Regular" family="HeadlandOne" pointSize="27"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DxI-DX-kpa">
+                                        <rect key="frame" x="149.5" y="383" width="76.5" height="34"/>
                                         <fontDescription key="fontDescription" name="HeadlandOne-Regular" family="HeadlandOne" pointSize="27"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -73,7 +79,9 @@
                                     <constraint firstAttribute="trailing" secondItem="oWO-Id-hpu" secondAttribute="trailing" id="8zI-f7-Xm2"/>
                                     <constraint firstItem="rAl-zZ-Oog" firstAttribute="centerX" secondItem="H8x-B0-27s" secondAttribute="centerX" id="BQI-ll-bJv"/>
                                     <constraint firstItem="oWO-Id-hpu" firstAttribute="leading" secondItem="e2q-SQ-kMu" secondAttribute="leading" id="Bmm-qc-Lkp"/>
-                                    <constraint firstItem="H8x-B0-27s" firstAttribute="top" secondItem="rAl-zZ-Oog" secondAttribute="bottom" constant="93" id="PmV-Ce-ijP"/>
+                                    <constraint firstItem="H8x-B0-27s" firstAttribute="top" secondItem="DxI-DX-kpa" secondAttribute="bottom" constant="100" id="KFg-pC-xi5"/>
+                                    <constraint firstItem="H8x-B0-27s" firstAttribute="top" secondItem="rAl-zZ-Oog" secondAttribute="bottom" constant="100" id="PmV-Ce-ijP"/>
+                                    <constraint firstItem="DxI-DX-kpa" firstAttribute="centerX" secondItem="H8x-B0-27s" secondAttribute="centerX" id="QYs-LC-jTq"/>
                                     <constraint firstItem="H8x-B0-27s" firstAttribute="leading" secondItem="e2q-SQ-kMu" secondAttribute="leading" id="bhW-yr-CE1"/>
                                     <constraint firstItem="oWO-Id-hpu" firstAttribute="top" secondItem="H8x-B0-27s" secondAttribute="bottom" constant="21" id="gIr-gu-ttc"/>
                                     <constraint firstAttribute="bottom" secondItem="oWO-Id-hpu" secondAttribute="bottom" constant="19" id="m8V-EO-dqu"/>
@@ -92,6 +100,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="rAl-zZ-Oog" id="BF5-A6-QpU"/>
                         <outlet property="downArrow" destination="oWO-Id-hpu" id="l5F-ol-dHv"/>
+                        <outlet property="scriptureLabel" destination="DxI-DX-kpa" id="fLd-eh-PCg"/>
                         <outlet property="upArrow" destination="H8x-B0-27s" id="iG0-S5-gca"/>
                     </connections>
                 </viewController>

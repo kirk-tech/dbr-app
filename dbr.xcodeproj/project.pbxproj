@@ -8,9 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		D60C72877B2215C2C9573EB7 /* Pods_dbr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E71D7B1212206BDD362792F9 /* Pods_dbr.framework */; };
+		FC0E5DFD21790D4F001C20C6 /* UIViewController+drag.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E5DFC21790D4F001C20C6 /* UIViewController+drag.swift */; };
+		FC0E5DFF2179175B001C20C6 /* UIView+corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E5DFE2179175B001C20C6 /* UIView+corners.swift */; };
+		FC0E5E0121792A53001C20C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC0E5E0021792A53001C20C6 /* Main.storyboard */; };
+		FC0E5E03217934E1001C20C6 /* DateMenuBarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E5E02217934E1001C20C6 /* DateMenuBarResponder.swift */; };
+		FC0E5E05217934F0001C20C6 /* ScriptureMenuBarResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0E5E04217934F0001C20C6 /* ScriptureMenuBarResponder.swift */; };
 		FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF62215DD5E7009E166B /* AppDelegate.swift */; };
 		FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */; };
-		FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF66215DD5E8009E166B /* Main.storyboard */; };
 		FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF69215DD5E9009E166B /* Assets.xcassets */; };
 		FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */; };
 		FC11DF78215DD5E9009E166B /* dbrTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC11DF77215DD5E9009E166B /* dbrTests.swift */; };
@@ -72,10 +76,14 @@
 		29BA5469DBE4F7BE4A968819 /* Pods-dbr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dbr.release.xcconfig"; path = "Pods/Target Support Files/Pods-dbr/Pods-dbr.release.xcconfig"; sourceTree = "<group>"; };
 		E71D7B1212206BDD362792F9 /* Pods_dbr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_dbr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED9AE00156156E57BD627D0B /* Pods-dbr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dbr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-dbr/Pods-dbr.debug.xcconfig"; sourceTree = "<group>"; };
+		FC0E5DFC21790D4F001C20C6 /* UIViewController+drag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+drag.swift"; sourceTree = "<group>"; };
+		FC0E5DFE2179175B001C20C6 /* UIView+corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+corners.swift"; sourceTree = "<group>"; };
+		FC0E5E0021792A53001C20C6 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		FC0E5E02217934E1001C20C6 /* DateMenuBarResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMenuBarResponder.swift; sourceTree = "<group>"; };
+		FC0E5E04217934F0001C20C6 /* ScriptureMenuBarResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptureMenuBarResponder.swift; sourceTree = "<group>"; };
 		FC11DF5F215DD5E7009E166B /* dbr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dbr.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC11DF62215DD5E7009E166B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FC11DF64215DD5E8009E166B /* DailyBibleReadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyBibleReadingViewController.swift; sourceTree = "<group>"; };
-		FC11DF67215DD5E8009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FC11DF69215DD5E9009E166B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FC11DF6C215DD5E9009E166B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FC11DF6E215DD5E9009E166B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,6 +262,8 @@
 				FCD7E94521717C7F00E4BF72 /* UIView+gradient.swift */,
 				FCD7E9492172643600E4BF72 /* CAAffineTransform+init.swift */,
 				FCDE127D216B45630060584F /* NSMutableParagraphStyle+init.swift */,
+				FC0E5DFC21790D4F001C20C6 /* UIViewController+drag.swift */,
+				FC0E5DFE2179175B001C20C6 /* UIView+corners.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -324,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				FC5EF81B21640F7200F00ABA /* MainViewController.swift */,
-				FC11DF66215DD5E8009E166B /* Main.storyboard */,
+				FC0E5E0021792A53001C20C6 /* Main.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -345,6 +355,8 @@
 			isa = PBXGroup;
 			children = (
 				FC5EF81921640A7F00F00ABA /* MenuBarViewController.swift */,
+				FC0E5E02217934E1001C20C6 /* DateMenuBarResponder.swift */,
+				FC0E5E04217934F0001C20C6 /* ScriptureMenuBarResponder.swift */,
 				FC5EF81F216413AF00F00ABA /* MenuBar.storyboard */,
 			);
 			path = MenuBar;
@@ -436,6 +448,7 @@
 				FC7B1E4D21672EE3003FEB09 /* OpenSans-Bold.ttf in Resources */,
 				FC11DF6D215DD5E9009E166B /* LaunchScreen.storyboard in Resources */,
 				FC11DF6A215DD5E9009E166B /* Assets.xcassets in Resources */,
+				FC0E5E0121792A53001C20C6 /* Main.storyboard in Resources */,
 				FCDE1283216B49C40060584F /* Settings.storyboard in Resources */,
 				FC7B1E4B2166F583003FEB09 /* OpenSans-SemiBold.ttf in Resources */,
 				FC5EF820216413AF00F00ABA /* MenuBar.storyboard in Resources */,
@@ -444,7 +457,6 @@
 				FC32EF5F2162CFB000D4DC6E /* Scripture.storyboard in Resources */,
 				FC11DF85215DD92C009E166B /* README.md in Resources */,
 				FC25B2022161F14800046A63 /* OpenSans-Regular.ttf in Resources */,
-				FC11DF68215DD5E8009E166B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,7 +523,9 @@
 				FCD7E94A2172643600E4BF72 /* CAAffineTransform+init.swift in Sources */,
 				FC7EF1DA21656307009FE58A /* UIConstants.swift in Sources */,
 				FC11DF65215DD5E8009E166B /* DailyBibleReadingViewController.swift in Sources */,
+				FC0E5DFD21790D4F001C20C6 /* UIViewController+drag.swift in Sources */,
 				FCEFED4C21669321003E4D92 /* Observable+setDoneLoading.swift in Sources */,
+				FC0E5DFF2179175B001C20C6 /* UIView+corners.swift in Sources */,
 				FC25B2042162801600046A63 /* UILabel+optimalHeight.swift in Sources */,
 				FCD7E94C217266BD00E4BF72 /* UIView+addDropShadow.swift in Sources */,
 				FC11DF63215DD5E7009E166B /* AppDelegate.swift in Sources */,
@@ -538,10 +552,12 @@
 				FC61BA0D216AC278004B0060 /* Date+equality.swift in Sources */,
 				FCEFDD44215DE4AA00C5FA7F /* Observable+Map.swift in Sources */,
 				FC7EF1D02164D03C009FE58A /* CacheService.swift in Sources */,
+				FC0E5E03217934E1001C20C6 /* DateMenuBarResponder.swift in Sources */,
 				FCDE127E216B45630060584F /* NSMutableParagraphStyle+init.swift in Sources */,
 				FCEFDD3D215DE20C00C5FA7F /* DBR.swift in Sources */,
 				FC5EF81C21640F7200F00ABA /* MainViewController.swift in Sources */,
 				FCEFDD41215DE44C00C5FA7F /* Encodable+dictionary.swift in Sources */,
+				FC0E5E05217934F0001C20C6 /* ScriptureMenuBarResponder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,14 +580,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FC11DF66215DD5E8009E166B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FC11DF67215DD5E8009E166B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FC11DF6B215DD5E9009E166B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

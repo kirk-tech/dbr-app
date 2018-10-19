@@ -31,10 +31,6 @@ class DailyBibleReadingViewController: UIViewController {
         AppDelegate.global.store?.date.change.subscribe(onNext: self.loadDBR).disposed(by: disposeBag)
         AppDelegate.global.store?.dbrIsLoading.change.subscribe(onNext: self.toggleLoadingView).disposed(by: disposeBag)
         
-        self.dbrCircleIconImage.rx.tapGesture().when(.recognized).subscribe(onNext: { _ in
-            self.showNextScripture()
-        }).disposed(by: self.disposeBag)
-        
         super.viewDidLoad()
     }
     
@@ -61,19 +57,9 @@ class DailyBibleReadingViewController: UIViewController {
             return
         }
         AppDelegate.global.store?.dbr.value = dbr
+        AppDelegate.global.store?.passage.value = dbr?.verses[0]
         self.updatePastorsNotes()
         self.titleTable.reloadData()
-    }
-    
-    @IBAction func didSwipeLeft(_ sender: Any) {
-        self.showNextScripture()
-    }
-    
-    func showNextScripture() -> Void {
-        guard let scriptureViewController = UIViewController.initWithStoryboard(ScriptureViewController.self) else {
-            return
-        }
-        navigationController?.pushViewController(scriptureViewController, animated: true)
     }
     
     @IBAction func didSwipeRight(_ sender: Any) {

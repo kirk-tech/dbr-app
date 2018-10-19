@@ -9,15 +9,20 @@
 import Foundation
 import RxSwift
 
+enum View {
+    case dbr
+    case settings
+    case scripture
+}
 
 class Store {
     
-    // Properties
     var date = StoreItem(Date())
     var dbr = StoreItem<DBR?>(nil)
-    var scriptureIndex = StoreItem(-1)
     var menuIsVisible = StoreItem(false)
     var dbrIsLoading = StoreItem(false)
+    var view = StoreItem(View.dbr)
+    var passage = StoreItem<String?>(nil)
     
 }
 

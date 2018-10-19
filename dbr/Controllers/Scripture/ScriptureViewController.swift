@@ -19,14 +19,6 @@ class ScriptureViewController: UIViewController {
     let disposeBag = DisposeBag()
     var passages = [String]()
     
-    var address: String? {
-        get {
-            let index = AppDelegate.global.store!.scriptureIndex.value
-            let verses = AppDelegate.global.store!.dbr.value?.verses
-            return verses?[index]
-        }
-    }
-    
     override func viewDidLoad() {
         
         self.passageTable.delegate = self
@@ -34,46 +26,30 @@ class ScriptureViewController: UIViewController {
         self.passageTable.sectionHeaderHeight = 0
         self.passageTable.sectionFooterHeight = 0
         
-        AppDelegate.global.store?.scriptureIndex.value += 1
-        self.titleAddress.text = address
-        ScriptureService.getPassage(address!).subscribe(onNext: { passage in
-            guard let psg = passage else {
-                // TODO: Handle failure to get pasage text
-                return
-            }
-            self.updateViewWithNewPassage(psg)
-        }).disposed(by: disposeBag)
-    }
-    
-    func updateViewWithNewPassage(_ passage: String) {
-        self.passages = ScriptureParser.splitScriptureIntoChapters(passage)
-        self.passageTable.reloadData()
+        AppDelegate.global.store?.passage.change
+            .subscribe(onNext: self.displayPassage)
+            .disposed(by: self.disposeBag)
         
-        // HACK: Table not laying out correctly
-        // so here we force it to layout right away
-        // and then forcefully set the height
-        self.passageTable.layoutIfNeeded()
-        self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
     }
     
-    @IBAction func didSwipeRight(_ sender: Any) {
-        AppDelegate.global.store?.scriptureIndex.value -= 1
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @IBAction func didSwipeLeft(_ sender: Any) {
-        let canMoveToAnotherScripture: Bool = {
-            let index = AppDelegate.global.store!.scriptureIndex.value
-            let verseCount = AppDelegate.global.store!.dbr.value!.verses.count
-            return (index + 1) < verseCount
-        }()
-        guard
-            canMoveToAnotherScripture,
-            let scriptureViewController = UIViewController.initWithStoryboard(ScriptureViewController.self)
-        else {
-            return
-        }
-        navigationController?.pushViewController(scriptureViewController, animated: true)
+    func displayPassage(_ passage: String?) {
+        guard let passageAddress = passage else { return }
+        self.titleAddress.text = passageAddress
+        ScriptureService.getPassage(passageAddress).subscribe(onNext: { scripture in
+            
+            // TODO: Handle failure to get pasage text
+            guard let text = scripture else { return }
+            
+            self.passages = ScriptureParser.splitScriptureIntoChapters(text)
+            self.passageTable.reloadData()
+            
+            // HACK: Table not laying out correctly
+            // so here we force it to layout right away
+            // and then forcefully set the height
+            self.passageTable.layoutIfNeeded()
+            self.passageTableHeightConstraint.constant = self.passageTable.contentSize.height
+            
+        }).disposed(by: disposeBag)
     }
     
 }
